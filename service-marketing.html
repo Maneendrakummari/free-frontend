@@ -1,0 +1,1432 @@
+<!-- ========================= -->
+<!-- SERVICE PAGE: DIGITAL MARKETING -->
+<!-- File Name: service-marketing.html -->
+<!-- ========================= -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Digital Marketing Services | Daxora Labs</title>
+
+<meta name="description"
+content="Full-stack digital marketing services by Daxora Labs including SEO, paid ads, conversion optimization, analytics, funnels, content strategy, and lead generation systems.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+/* ========================= */
+/* KEEP SAME ROOT TOKENS */
+/* ========================= */
+
+:root{
+  --bg:#06060a;
+  --bg2:#0c0c12;
+  --bg3:#12121a;
+  --bg4:#1a1a24;
+  --glass:rgba(255,255,255,0.03);
+  --glass2:rgba(255,255,255,0.055);
+
+  --accent:#f97316;
+  --accent2:#fb923c;
+  --accent3:#fdba74;
+
+  --accent-dim:rgba(249,115,22,0.1);
+  --accent-glow:rgba(249,115,22,0.25);
+  --accent-border:rgba(249,115,22,0.22);
+
+  --text:#f5f4f2;
+  --text2:#9d9b96;
+  --text3:#4a4845;
+
+  --border:rgba(255,255,255,0.06);
+
+  --nav-h:68px;
+
+  --r:14px;
+  --r2:20px;
+  --r3:28px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Outfit',sans-serif;
+  overflow-x:hidden;
+}
+
+/* ========================= */
+/* GRAIN */
+/* ========================= */
+
+.grain{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.018;
+  z-index:1;
+
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ========================= */
+/* NAV */
+/* ========================= */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+
+  height:var(--nav-h);
+
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  padding:0 2.5rem;
+
+  background:rgba(6,6,10,.82);
+
+  backdrop-filter:blur(24px);
+
+  border-bottom:1px solid var(--border);
+
+  z-index:999;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:.75rem;
+
+  text-decoration:none;
+}
+
+.logo img{
+  width:44px;
+  height:44px;
+
+  padding:4px;
+
+  border-radius:12px;
+
+  background:rgba(255,255,255,.02);
+
+  border:1px solid rgba(249,115,22,.12);
+}
+
+.logo span{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:1rem;
+  font-weight:800;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+
+  background:linear-gradient(90deg,#fafaf9,#d6d3d1);
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.nav-links{
+  display:flex;
+  gap:.2rem;
+}
+
+.nav-links a{
+  text-decoration:none;
+
+  color:var(--text2);
+
+  font-size:.8rem;
+  font-weight:500;
+
+  padding:.5rem .9rem;
+
+  border-radius:10px;
+
+  transition:.2s;
+}
+
+.nav-links a:hover{
+  color:var(--text);
+
+  background:rgba(255,255,255,.04);
+}
+
+.btn-nav{
+  background:linear-gradient(135deg,var(--accent),#ea580c);
+
+  color:#fff;
+
+  text-decoration:none;
+
+  padding:.55rem 1.2rem;
+
+  border-radius:10px;
+
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.78rem;
+  font-weight:700;
+
+  box-shadow:0 6px 24px rgba(249,115,22,.32);
+}
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero{
+  min-height:100vh;
+
+  position:relative;
+
+  padding:
+    calc(var(--nav-h) + 5rem)
+    2.5rem
+    5rem;
+}
+
+.hero-grid{
+  position:absolute;
+  inset:0;
+
+  background-image:
+  linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+
+  background-size:60px 60px;
+
+  opacity:.4;
+}
+
+.hero-inner{
+  position:relative;
+  z-index:2;
+
+  max-width:1240px;
+
+  margin:auto;
+
+  display:grid;
+  grid-template-columns:1fr 380px;
+
+  gap:4rem;
+  align-items:center;
+}
+
+.hero-tag{
+  display:inline-flex;
+  align-items:center;
+  gap:.5rem;
+
+  font-family:'JetBrains Mono',monospace;
+  font-size:.68rem;
+
+  color:var(--accent);
+
+  border:1px solid var(--accent-border);
+
+  background:var(--accent-dim);
+
+  padding:.35rem .9rem;
+
+  border-radius:100px;
+
+  margin-bottom:2rem;
+}
+
+.hero h1{
+  font-family:'Barlow Condensed',sans-serif;
+
+  font-size:clamp(4rem,7vw,7rem);
+
+  line-height:.9;
+
+  text-transform:uppercase;
+
+  margin-bottom:1.5rem;
+}
+
+.hero h1 span{
+  color:var(--accent);
+  font-style:italic;
+}
+
+.hero-sub{
+  max-width:580px;
+
+  color:var(--text2);
+
+  line-height:1.9;
+
+  font-size:1rem;
+
+  margin-bottom:2.5rem;
+}
+
+.hero-btns{
+  display:flex;
+  gap:1rem;
+  flex-wrap:wrap;
+}
+
+.btn-primary{
+  background:var(--accent);
+
+  color:#fff;
+
+  text-decoration:none;
+
+  padding:.95rem 1.9rem;
+
+  border-radius:12px;
+
+  font-family:'Space Grotesk',sans-serif;
+  font-weight:700;
+
+  box-shadow:0 8px 28px rgba(249,115,22,.35);
+}
+
+.btn-outline{
+  border:1px solid var(--border);
+
+  color:var(--text);
+
+  text-decoration:none;
+
+  padding:.95rem 1.9rem;
+
+  border-radius:12px;
+
+  background:rgba(255,255,255,.03);
+}
+
+/* ========================= */
+/* HERO PANEL */
+/* ========================= */
+
+.hero-panel{
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.05),
+    rgba(255,255,255,.02)
+  );
+
+  border:1px solid var(--border);
+
+  border-radius:var(--r3);
+
+  padding:2rem;
+
+  backdrop-filter:blur(20px);
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+
+  background:var(--border);
+
+  border-radius:16px;
+
+  overflow:hidden;
+
+  margin-bottom:1.5rem;
+}
+
+.stat{
+  background:var(--bg2);
+
+  padding:1.5rem;
+}
+
+.stat-n{
+  font-family:'Space Grotesk',sans-serif;
+
+  font-size:2rem;
+  font-weight:800;
+}
+
+.stat-l{
+  margin-top:.5rem;
+
+  font-size:.65rem;
+
+  color:var(--text3);
+
+  text-transform:uppercase;
+
+  letter-spacing:.1em;
+}
+
+.stack-label{
+  font-family:'JetBrains Mono',monospace;
+
+  font-size:.62rem;
+
+  color:var(--text3);
+
+  margin-bottom:.8rem;
+}
+
+.chips{
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+}
+
+.chip{
+  padding:.35rem .7rem;
+
+  border-radius:7px;
+
+  border:1px solid var(--border);
+
+  background:rgba(255,255,255,.04);
+
+  font-size:.68rem;
+
+  color:var(--text2);
+
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* ========================= */
+/* PREMIUM MARQUEE */
+/* ========================= */
+
+.marquee-wrap{
+  position:relative;
+
+  overflow:hidden;
+
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.05);
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,.015),
+      rgba(255,255,255,.01)
+    );
+
+  padding:1.05rem 0;
+}
+
+.marquee-wrap::before,
+.marquee-wrap::after{
+  content:"";
+
+  position:absolute;
+  top:0;
+  bottom:0;
+
+  width:120px;
+
+  z-index:2;
+
+  pointer-events:none;
+}
+
+.marquee-wrap::before{
+  left:0;
+
+  background:linear-gradient(
+    90deg,
+    var(--bg),
+    transparent
+  );
+}
+
+.marquee-wrap::after{
+  right:0;
+
+  background:linear-gradient(
+    -90deg,
+    var(--bg),
+    transparent
+  );
+}
+
+.marquee-track{
+  display:flex;
+  align-items:center;
+
+  width:max-content;
+
+  animation:slide 24s linear infinite;
+}
+
+.marquee-track span{
+  position:relative;
+
+  padding:0 2rem;
+
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.72rem;
+  font-weight:700;
+
+  letter-spacing:.18em;
+
+  text-transform:uppercase;
+
+  color:rgba(255,255,255,.42);
+
+  white-space:nowrap;
+}
+
+.marquee-track span::after{
+  content:"•";
+
+  position:absolute;
+  right:-4px;
+  top:50%;
+
+  transform:translateY(-50%);
+
+  color:var(--accent);
+
+  opacity:.55;
+
+  font-size:.7rem;
+}
+
+@keyframes slide{
+  from{
+    transform:translateX(0);
+  }
+
+  to{
+    transform:translateX(-50%);
+  }
+}
+@keyframes slide{
+  from{transform:translateX(0)}
+  to{transform:translateX(-50%)}
+}
+
+/* ========================= */
+/* SECTION */
+/* ========================= */
+
+.wrap{
+  max-width:1240px;
+  margin:auto;
+
+  padding:7rem 2.5rem;
+}
+
+.sec-head{
+  margin-bottom:4rem;
+}
+
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+
+  font-size:.65rem;
+
+  color:var(--accent);
+
+  letter-spacing:.14em;
+
+  text-transform:uppercase;
+
+  margin-bottom:1rem;
+}
+
+.sh{
+  font-family:'Barlow Condensed',sans-serif;
+
+  font-size:clamp(2.5rem,5vw,4rem);
+
+  text-transform:uppercase;
+
+  line-height:.95;
+
+  margin-bottom:1rem;
+}
+
+.sh em{
+  color:var(--accent);
+  font-style:italic;
+}
+
+.ss{
+  max-width:560px;
+
+  color:var(--text2);
+
+  line-height:1.8;
+}
+
+/* ========================= */
+/* SERVICE GRID */
+/* ========================= */
+
+.build-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+
+  gap:1.25rem;
+}
+
+.build-card{
+  background:linear-gradient(
+    155deg,
+    rgba(255,255,255,.04),
+    rgba(255,255,255,.015)
+  );
+
+  border:1px solid var(--border);
+
+  border-radius:var(--r3);
+
+  padding:2rem;
+
+  transition:.3s;
+}
+
+.build-card:hover{
+  transform:translateY(-8px);
+
+  border-color:rgba(249,115,22,.25);
+}
+
+.build-icon{
+  font-size:2rem;
+
+  margin-bottom:1.5rem;
+}
+
+.build-title{
+  font-family:'Space Grotesk',sans-serif;
+
+  font-size:1.1rem;
+  font-weight:700;
+
+  margin-bottom:.7rem;
+}
+
+.build-desc{
+  color:var(--text2);
+
+  line-height:1.8;
+
+  font-size:.9rem;
+}
+
+/* ========================= */
+/* FRAMEWORK */
+/* ========================= */
+
+.framework{
+  background:var(--bg2);
+}
+
+.framework-grid{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+
+  gap:1rem;
+}
+
+.step{
+  background:var(--bg3);
+
+  border:1px solid var(--border);
+
+  border-radius:var(--r2);
+
+  padding:2rem;
+}
+
+.step-num{
+  font-family:'JetBrains Mono',monospace;
+
+  color:var(--accent);
+
+  font-size:2rem;
+
+  margin-bottom:1rem;
+}
+
+.step-title{
+  font-family:'Space Grotesk',sans-serif;
+
+  margin-bottom:.7rem;
+}
+
+.step-desc{
+  color:var(--text2);
+
+  line-height:1.7;
+
+  font-size:.85rem;
+}
+
+/* ========================= */
+/* CASE STUDIES */
+/* ========================= */
+
+.case-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+
+  gap:1.5rem;
+}
+
+.case-card{
+  background:linear-gradient(
+    145deg,
+    rgba(255,255,255,.04),
+    rgba(255,255,255,.015)
+  );
+
+  border:1px solid var(--border);
+
+  border-radius:var(--r3);
+
+  padding:2rem;
+}
+
+.case-type{
+  display:inline-flex;
+
+  padding:.3rem .8rem;
+
+  border-radius:100px;
+
+  background:var(--accent-dim);
+
+  border:1px solid var(--accent-border);
+
+  color:var(--accent);
+
+  font-size:.68rem;
+
+  font-family:'JetBrains Mono',monospace;
+
+  margin-bottom:1rem;
+}
+
+.case-title{
+  font-family:'Space Grotesk',sans-serif;
+
+  font-size:1.2rem;
+
+  margin-bottom:.8rem;
+}
+
+.case-desc{
+  color:var(--text2);
+
+  line-height:1.8;
+
+  margin-bottom:1.5rem;
+}
+
+.result{
+  display:inline-flex;
+  align-items:center;
+  gap:.4rem;
+
+  background:rgba(74,222,128,.08);
+
+  border:1px solid rgba(74,222,128,.18);
+
+  color:#4ade80;
+
+  padding:.4rem .8rem;
+
+  border-radius:8px;
+
+  font-size:.72rem;
+
+  font-family:'JetBrains Mono',monospace;
+}
+
+/* ========================= */
+/* FAQ */
+/* ========================= */
+
+.faq-grid{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+.faq{
+  background:var(--bg2);
+
+  border:1px solid var(--border);
+
+  border-radius:18px;
+
+  padding:1.4rem 1.5rem;
+}
+
+.faq-q{
+  font-family:'Space Grotesk',sans-serif;
+
+  font-weight:700;
+
+  margin-bottom:.8rem;
+}
+
+.faq-a{
+  color:var(--text2);
+
+  line-height:1.8;
+}
+
+/* ========================= */
+/* CTA */
+/* ========================= */
+
+.cta{
+  text-align:center;
+
+  background:linear-gradient(
+    145deg,
+    rgba(249,115,22,.08),
+    rgba(255,255,255,.02)
+  );
+
+  border:1px solid rgba(249,115,22,.15);
+
+  border-radius:32px;
+
+  padding:5rem 2rem;
+}
+
+.cta h2{
+  font-family:'Barlow Condensed',sans-serif;
+
+  font-size:clamp(3rem,6vw,5rem);
+
+  text-transform:uppercase;
+
+  line-height:.9;
+
+  margin-bottom:1rem;
+}
+
+.cta p{
+  max-width:700px;
+
+  margin:auto auto 2rem;
+
+  color:var(--text2);
+
+  line-height:1.8;
+}
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer{
+  border-top:1px solid var(--border);
+
+  padding:2rem 2.5rem;
+
+  display:flex;
+  justify-content:space-between;
+
+  color:var(--text3);
+
+  font-size:.8rem;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width:1100px){
+
+  .hero-inner{
+    grid-template-columns:1fr;
+  }
+
+  .build-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .framework-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:768px){
+
+  nav{
+    padding:0 1.5rem;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    padding:
+      calc(var(--nav-h) + 4rem)
+      1.5rem
+      4rem;
+  }
+
+  .wrap{
+    padding:4.5rem 1.5rem;
+  }
+
+  .build-grid,
+  .case-grid,
+  .framework-grid{
+    grid-template-columns:1fr;
+  }
+
+  footer{
+    flex-direction:column;
+    gap:1rem;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grain"></div>
+
+<!-- ========================= -->
+<!-- NAV -->
+<!-- ========================= -->
+
+<nav>
+
+  <a href="index.html" class="logo">
+    <img src="daxora.png" alt="Daxora Labs">
+    <span>Daxora Labs</span>
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#process">Process</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+
+  <a href="index.html#contact" class="btn-nav">
+    Book a Call →
+  </a>
+
+</nav>
+
+<!-- ========================= -->
+<!-- HERO -->
+<!-- ========================= -->
+
+<section class="hero">
+
+<div class="hero-grid"></div>
+
+<div class="hero-inner">
+
+<div>
+
+<div class="hero-tag">
+  Full-Stack Growth Systems
+</div>
+
+<h1>
+Scale with<br>
+<span>digital marketing</span><br>
+that converts
+</h1>
+
+<p class="hero-sub">
+Daxora Labs builds performance-driven marketing systems combining
+SEO, paid advertising, analytics, automation, funnels,
+content strategy, and conversion optimization to generate
+consistent growth and measurable business results.
+</p>
+
+<div class="hero-btns">
+
+<a href="#case-studies" class="btn-primary">
+View Case Studies ↓
+</a>
+
+<a href="index.html#contact" class="btn-outline">
+Book Strategy Call →
+</a>
+
+</div>
+
+</div>
+
+<div class="hero-panel">
+
+<div class="stats-grid">
+
+<div class="stat">
+<div class="stat-n">220%</div>
+<div class="stat-l">Lead Growth</div>
+</div>
+
+<div class="stat">
+<div class="stat-n">4.8x</div>
+<div class="stat-l">ROAS Increase</div>
+</div>
+
+<div class="stat">
+<div class="stat-n">60%</div>
+<div class="stat-l">Lower CAC</div>
+</div>
+
+<div class="stat">
+<div class="stat-n">24/7</div>
+<div class="stat-l">Automation Systems</div>
+</div>
+
+</div>
+
+<div class="stack-label">
+MARKETING STACK
+</div>
+
+<div class="chips">
+<span class="chip">SEO</span>
+<span class="chip">Google Ads</span>
+<span class="chip">Meta Ads</span>
+<span class="chip">GA4</span>
+<span class="chip">Funnels</span>
+<span class="chip">Email Automation</span>
+<span class="chip">Analytics</span>
+<span class="chip">CRO</span>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- MARQUEE -->
+<!-- ========================= -->
+
+<div class="marquee-wrap">
+<div class="marquee-track">
+
+<span>SEO</span>
+<span>Lead Generation</span>
+<span>Paid Advertising</span>
+<span>Funnels</span>
+<span>Analytics</span>
+<span>Conversion Optimization</span>
+<span>Email Marketing</span>
+
+<span>SEO</span>
+<span>Lead Generation</span>
+<span>Paid Advertising</span>
+<span>Funnels</span>
+<span>Analytics</span>
+<span>Conversion Optimization</span>
+<span>Email Marketing</span>
+
+</div>
+</div>
+
+<!-- ========================= -->
+<!-- WHAT WE DO -->
+<!-- ========================= -->
+
+<section class="wrap">
+
+<div class="sec-head">
+
+<div class="eyebrow">
+What We Deliver
+</div>
+
+<h2 class="sh">
+Full-stack <em>marketing</em><br>
+capabilities
+</h2>
+
+<p class="ss">
+We combine technical infrastructure, creative strategy,
+and performance optimization into a single scalable growth engine.
+</p>
+
+</div>
+
+<div class="build-grid">
+
+<div class="build-card">
+<div class="build-icon">🔍</div>
+<div class="build-title">SEO & Organic Growth</div>
+<div class="build-desc">
+Technical SEO, content optimization, local SEO,
+keyword strategy, and authority building systems.
+</div>
+</div>
+
+<div class="build-card">
+<div class="build-icon">📈</div>
+<div class="build-title">Paid Advertising</div>
+<div class="build-desc">
+Google Ads, Meta Ads, retargeting campaigns,
+and ROI-focused advertising funnels.
+</div>
+</div>
+
+<div class="build-card">
+<div class="build-icon">⚡</div>
+<div class="build-title">Conversion Funnels</div>
+<div class="build-desc">
+Landing pages, lead magnets,
+email sequences, and funnel optimization systems.
+</div>
+</div>
+
+<div class="build-card">
+<div class="build-icon">📊</div>
+<div class="build-title">Analytics & Tracking</div>
+<div class="build-desc">
+GA4 dashboards, event tracking,
+pixel setup, attribution systems, and reporting.
+</div>
+</div>
+
+<div class="build-card">
+<div class="build-icon">🤖</div>
+<div class="build-title">Marketing Automation</div>
+<div class="build-desc">
+CRM workflows, automated follow-ups,
+lead nurturing, and intelligent engagement systems.
+</div>
+</div>
+
+<div class="build-card">
+<div class="build-icon">🎯</div>
+<div class="build-title">Content Strategy</div>
+<div class="build-desc">
+Content planning, social strategy,
+copywriting, and audience growth frameworks.
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FRAMEWORK -->
+<!-- ========================= -->
+
+<section class="wrap framework">
+
+<div class="sec-head">
+
+<div class="eyebrow">
+Growth Framework
+</div>
+
+<h2 class="sh">
+Our <em>marketing</em><br>
+execution process
+</h2>
+
+</div>
+
+<div class="framework-grid">
+
+<div class="step">
+<div class="step-num">01</div>
+<div class="step-title">Research</div>
+<div class="step-desc">
+Audience analysis, competitor breakdown,
+market positioning, and opportunity mapping.
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">02</div>
+<div class="step-title">Strategy</div>
+<div class="step-desc">
+Building acquisition systems,
+channel strategy, and conversion architecture.
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">03</div>
+<div class="step-title">Launch</div>
+<div class="step-desc">
+Campaign setup, tracking systems,
+landing pages, and automation deployment.
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">04</div>
+<div class="step-title">Optimize</div>
+<div class="step-desc">
+Continuous A/B testing,
+creative optimization, and conversion improvements.
+</div>
+</div>
+
+<div class="step">
+<div class="step-num">05</div>
+<div class="step-title">Scale</div>
+<div class="step-desc">
+Scaling profitable campaigns,
+automation systems, and growth operations.
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CASE STUDIES -->
+<!-- ========================= -->
+
+<section class="wrap" id="case-studies">
+
+<div class="sec-head">
+
+<div class="eyebrow">
+Results
+</div>
+
+<h2 class="sh">
+Growth-focused<br>
+<em>case studies</em>
+</h2>
+
+</div>
+
+<div class="case-grid">
+
+<div class="case-card">
+
+<div class="case-type">
+SEO / Lead Generation
+</div>
+
+<div class="case-title">
+Corporate Website Growth
+</div>
+
+<div class="case-desc">
+Rebuilt SEO structure and conversion funnel
+for a service business generating significantly
+higher inbound lead flow.
+</div>
+
+<div class="result">
+↑ 2.4× inbound leads
+</div>
+
+</div>
+
+<div class="case-card">
+
+<div class="case-type">
+Paid Ads / Funnels
+</div>
+
+<div class="case-title">
+Education Funnel Campaign
+</div>
+
+<div class="case-desc">
+Created multi-channel acquisition funnels
+with retargeting systems and automated nurturing.
+</div>
+
+<div class="result">
+↑ 4.8x ROAS improvement
+</div>
+
+</div>
+
+<div class="case-card">
+
+<div class="case-type">
+Social Media Growth
+</div>
+
+<div class="case-title">
+Brand Awareness Campaign
+</div>
+
+<div class="case-desc">
+Scaled audience engagement through
+high-volume content systems and paid amplification.
+</div>
+
+<div class="result">
+↑ 320% engagement growth
+</div>
+
+</div>
+
+<div class="case-card">
+
+<div class="case-type">
+Automation / CRM
+</div>
+
+<div class="case-title">
+Lead Qualification System
+</div>
+
+<div class="case-desc">
+Automated inquiry handling,
+follow-up workflows, and CRM segmentation.
+</div>
+
+<div class="result">
+↑ 60% faster lead response
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FAQ -->
+<!-- ========================= -->
+
+<section class="wrap">
+
+<div class="sec-head">
+
+<div class="eyebrow">
+FAQ
+</div>
+
+<h2 class="sh">
+Common <em>questions</em>
+</h2>
+
+</div>
+
+<div class="faq-grid">
+
+<div class="faq">
+<div class="faq-q">
+How long does digital marketing take to show results?
+</div>
+<div class="faq-a">
+SEO typically takes 3–6 months for strong momentum,
+while paid campaigns and funnel systems can begin producing results within weeks.
+</div>
+</div>
+
+<div class="faq">
+<div class="faq-q">
+Do you manage ad campaigns?
+</div>
+<div class="faq-a">
+Yes — we handle strategy, creatives, campaign setup,
+optimization, retargeting, analytics, and reporting.
+</div>
+</div>
+
+<div class="faq">
+<div class="faq-q">
+Can you integrate marketing automation?
+</div>
+<div class="faq-a">
+Absolutely. We build CRM workflows,
+email sequences, lead nurturing systems,
+and automated customer engagement pipelines.
+</div>
+</div>
+
+<div class="faq">
+<div class="faq-q">
+Do you provide analytics dashboards?
+</div>
+<div class="faq-a">
+Yes. We configure GA4, conversion tracking,
+custom reporting dashboards, and performance monitoring systems.
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- CTA -->
+<!-- ========================= -->
+
+<section class="wrap">
+
+<div class="cta">
+
+<h2>
+Ready to scale<br>
+your growth?
+</h2>
+
+<p>
+Whether you need SEO, lead generation,
+paid advertising, funnels, or automation —
+Daxora Labs builds growth systems engineered for measurable results.
+</p>
+
+<a href="index.html#contact" class="btn-primary">
+Book a Strategy Call →
+</a>
+
+</div>
+
+</section>
+
+<!-- ========================= -->
+<!-- FOOTER -->
+<!-- ========================= -->
+
+<footer>
+
+<div>
+© 2026 Daxora Labs
+</div>
+
+<div>
+Built for scalable digital growth
+</div>
+
+</footer>
+
+</body>
+</html>
