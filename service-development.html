@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Stack Development — Daxora Labs</title>
+<meta name="description" content="Scalable, production-grade web applications built by Daxora Labs — from SaaS dashboards to e-commerce platforms and custom APIs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#06060a;--bg2:#0c0c12;--bg3:#12121a;--bg4:#1a1a24;
+  --glass:rgba(255,255,255,0.03);--glass2:rgba(255,255,255,0.055);
+  --accent:#f97316;--accent2:#fb923c;--accent3:#fdba74;
+  --accent-dim:rgba(249,115,22,0.1);--accent-glow:rgba(249,115,22,0.25);
+  --accent-border:rgba(249,115,22,0.22);
+  --text:#f5f4f2;--text2:#9d9b96;--text3:#4a4845;
+  --border:rgba(255,255,255,0.06);--border2:rgba(255,255,255,0.03);
+  --nav-h:68px;--r:14px;--r2:20px;--r3:28px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Outfit',system-ui,sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* GRAIN */
+.grain{position:fixed;inset:0;pointer-events:none;z-index:1;opacity:0.018;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* CURSOR */
+@media(pointer:fine){body{cursor:none}}
+.cur,.cur-ring{pointer-events:none!important;position:fixed;z-index:9999;border-radius:50%;transform:translate(-50%,-50%)}
+.cur{display:none;width:5px;height:5px;background:var(--accent);top:0;left:0;z-index:10000}
+.cur-ring{display:none;width:28px;height:28px;border:1px solid rgba(249,115,22,0.45);top:0;left:0;transition:width .2s,height .2s,border-color .2s}
+@media(pointer:fine){.cur,.cur-ring{display:block}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 2.5rem;background:rgba(6,6,10,0.82);backdrop-filter:blur(24px) saturate(1.5);border-bottom:1px solid var(--border);transition:background .3s}
+.logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;font-family:'Space Grotesk',sans-serif;font-size:.92rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--text);transition:transform .2s,opacity .2s}
+.logo:hover{opacity:.95;transform:translateY(-1px)}
+.logo img{width:44px;height:44px;object-fit:contain;display:block;padding:4px;border-radius:12px;background:rgba(255,255,255,0.02);border:1px solid rgba(249,115,22,.12);filter:drop-shadow(0 0 14px rgba(249,115,22,.30))}
+.logo span{font-size:1.08rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;line-height:1;background:linear-gradient(90deg,#fafaf9,#d6d3d1);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-links{display:flex;align-items:center;gap:.15rem}
+.nav-links a{font-size:.78rem;font-weight:500;color:var(--text2);text-decoration:none;padding:.45rem .9rem;border-radius:9px;letter-spacing:.02em;transition:color .2s,background .2s,transform .15s}
+.nav-links a:hover{color:var(--text);background:rgba(255,255,255,.04);transform:translateY(-1px)}
+.nav-right{display:flex;align-items:center;gap:.75rem}
+.avail-badge{display:flex;align-items:center;gap:.45rem;font-size:.68rem;font-weight:600;letter-spacing:.05em;color:#4ade80;background:rgba(74,222,128,0.08);border:1px solid rgba(74,222,128,0.18);padding:.3rem .8rem;border-radius:100px}
+.avail-dot{width:5px;height:5px;border-radius:50%;background:#4ade80;animation:blink 2.2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.btn-nav{font-family:'Space Grotesk',sans-serif;font-size:.76rem;font-weight:700;letter-spacing:.04em;color:#fff;background:linear-gradient(135deg,var(--accent),#ea580c);padding:.48rem 1.2rem;border-radius:10px;text-decoration:none;transition:transform .18s,opacity .2s,box-shadow .25s;box-shadow:0 4px 20px rgba(249,115,22,.32)}
+.btn-nav:hover{opacity:.88;transform:translateY(-1px);box-shadow:0 6px 24px rgba(249,115,22,.45)}
+.ham{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+.ham span{display:block;width:20px;height:1.5px;background:var(--text);border-radius:2px;transition:all .3s}
+.ham.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.ham.open span:nth-child(2){opacity:0}
+.ham.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.mob-nav{display:none;position:fixed;top:var(--nav-h);left:0;right:0;background:rgba(6,6,10,.97);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);padding:1.25rem 1.75rem 2rem;z-index:498;flex-direction:column;gap:.15rem}
+.mob-nav.open{display:flex}
+.mob-nav a{color:var(--text2);text-decoration:none;padding:.9rem 0;border-bottom:1px solid var(--border);font-size:.95rem;font-weight:500;transition:color .2s}
+.mob-nav a:hover{color:var(--accent)}
+.mob-nav a.mob-cta{margin-top:1rem;border:none!important;background:var(--accent);color:#fff;border-radius:10px;padding:.9rem;text-align:center;font-weight:700;font-family:'Space Grotesk',sans-serif;letter-spacing:.03em}
+
+/* SHARED */
+.div{height:1px;background:var(--border)}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--accent)}
+.sh{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.2rem,4vw,3.5rem);font-weight:800;letter-spacing:-.02em;line-height:.98;text-transform:uppercase;margin-bottom:.85rem}
+.sh em{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:800;color:var(--accent)}
+.ss{font-size:.92rem;font-weight:300;color:var(--text2);line-height:1.8;max-width:440px}
+.tags{display:flex;flex-wrap:wrap;gap:.45rem}
+.tag{font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:400;padding:.28rem .65rem;border-radius:6px;background:rgba(255,255,255,.05);border:1px solid var(--border);color:#c4c3c0;letter-spacing:.02em;transition:background .22s,border-color .22s,transform .22s}
+.tag:hover{background:var(--accent-dim);border-color:var(--accent-border);transform:translateY(-2px);color:#fff}
+.btn-primary{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.85rem;background:var(--accent);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.03em;border-radius:10px;text-decoration:none;border:none;cursor:pointer;transition:transform .18s,box-shadow .18s,opacity .18s;box-shadow:0 4px 22px rgba(249,115,22,.38)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(249,115,22,.5);opacity:.93}
+.btn-outline{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.85rem;background:var(--glass2);color:var(--text);font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.02em;border:1px solid var(--border);border-radius:10px;text-decoration:none;transition:border-color .2s,background .2s,transform .18s;backdrop-filter:blur(10px)}
+.btn-outline:hover{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.07);transform:translateY(-2px)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+/* BREADCRUMB */
+.breadcrumb{position:relative;z-index:2;display:flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);margin-bottom:2.5rem}
+.breadcrumb a{color:var(--text3);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover{color:var(--accent)}
+.breadcrumb span{color:var(--accent)}
+
+/* HERO */
+.svc-hero{min-height:92vh;padding:calc(var(--nav-h) + 5rem) 2.5rem 5rem;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.hero-orbs{position:absolute;inset:0;pointer-events:none;z-index:0}
+.orb{position:absolute;border-radius:50%;filter:blur(100px)}
+.orb1{width:700px;height:700px;background:radial-gradient(circle,rgba(249,115,22,0.08),transparent 65%);top:-200px;right:-150px}
+.orb2{width:450px;height:450px;background:radial-gradient(circle,rgba(234,88,12,0.05),transparent 65%);bottom:-100px;left:5%}
+.hero-grid{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:60px 60px;-webkit-mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 30%,transparent 100%);mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 30%,transparent 100%)}
+.hero-inner{position:relative;z-index:2;max-width:1240px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-border);background:var(--accent-dim);padding:.32rem .9rem;border-radius:100px;margin-bottom:1.25rem}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse-o 2.5s ease-in-out infinite}
+@keyframes pulse-o{0%,100%{box-shadow:0 0 0 0 rgba(249,115,22,.5)}50%{box-shadow:0 0 0 6px rgba(249,115,22,0)}}
+.hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3.2rem,6vw,6.5rem);font-weight:900;line-height:.88;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:1.5rem}
+.hero h1 em{font-family:'Barlow Condensed',sans-serif;font-style:italic;font-weight:900;color:var(--accent)}
+.hero-sub{font-size:1rem;font-weight:300;line-height:1.85;color:var(--text2);max-width:520px;margin-bottom:2.5rem}
+.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:3rem}
+.hero-metrics{display:flex;gap:2.5rem;flex-wrap:wrap}
+.hm{display:flex;flex-direction:column;gap:.2rem}
+.hm-num{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;letter-spacing:-.03em;color:var(--accent)}
+.hm-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text3)}
+
+/* HERO RIGHT PANEL */
+.hero-panel{background:linear-gradient(145deg,rgba(255,255,255,.05),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:var(--r3);padding:2rem;backdrop-filter:blur(20px);box-shadow:0 32px 80px rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08)}
+.panel-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem}
+.stack-row{display:flex;flex-direction:column;gap:.65rem;margin-bottom:1.75rem}
+.stack-item{display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;background:var(--bg2);border:1px solid var(--border);border-radius:10px;transition:border-color .2s,background .2s}
+.stack-item:hover{border-color:var(--accent-border);background:var(--bg3)}
+.si-left{display:flex;align-items:center;gap:.7rem}
+.si-icon{width:30px;height:30px;border-radius:8px;background:var(--accent-dim);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;font-size:.85rem}
+.si-name{font-family:'Space Grotesk',sans-serif;font-size:.82rem;font-weight:600;letter-spacing:-.01em}
+.si-role{font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:400;color:var(--text3);letter-spacing:.06em;text-transform:uppercase}
+.si-badge{font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.18);padding:.18rem .55rem;border-radius:5px}
+.panel-divider{height:1px;background:var(--border);margin:1.25rem 0}
+.delivery-stat{display:flex;align-items:center;justify-content:space-between;padding:.6rem 0}
+.ds-label{font-family:'JetBrains Mono',monospace;font-size:.62rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text3)}
+.ds-val{font-family:'Space Grotesk',sans-serif;font-size:.84rem;font-weight:700;color:var(--text)}
+.ds-val.green{color:#4ade80}
+.ds-val.orange{color:var(--accent)}
+
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:.85rem 0;background:var(--bg2)}
+.marquee-track{display:flex;gap:0;animation:slide 28s linear infinite;width:max-content}
+.marquee-track span{font-family:'Space Grotesk',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);white-space:nowrap;padding:0 2rem;display:flex;align-items:center;gap:2rem}
+.marquee-track span::after{content:'◆';color:var(--accent);font-size:.45rem}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* WHAT WE BUILD */
+.builds-section{padding:7rem 2.5rem;max-width:1240px;margin:0 auto}
+.builds-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem;margin-top:3.5rem}
+.build-card{background:linear-gradient(155deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border:1px solid var(--border);border-radius:var(--r3);padding:2.25rem;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s,box-shadow .3s;isolation:isolate}
+.build-card::before{content:'';position:absolute;inset:0;border-radius:var(--r3);background:radial-gradient(circle at top right,rgba(249,115,22,.1),transparent 55%);opacity:0;transition:opacity .35s}
+.build-card:hover{transform:translateY(-8px);border-color:rgba(249,115,22,.28);box-shadow:0 24px 60px rgba(0,0,0,.5)}
+.build-card:hover::before{opacity:1}
+.build-icon{width:52px;height:52px;border-radius:14px;background:linear-gradient(145deg,rgba(249,115,22,.18),rgba(249,115,22,.05));border:1px solid rgba(249,115,22,.18);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.5rem;box-shadow:0 8px 24px rgba(249,115,22,.1)}
+.build-name{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.6rem}
+.build-desc{font-size:.84rem;line-height:1.8;color:var(--text2);margin-bottom:1.25rem}
+.build-num{font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:500;letter-spacing:.1em;color:var(--text3);position:absolute;top:1.5rem;right:1.75rem}
+
+/* FRAMEWORK / PROCESS */
+.framework-section{padding:7rem 2.5rem;background:var(--bg2)}
+.framework-inner{max-width:1240px;margin:0 auto}
+.framework-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.framework-steps{display:flex;flex-direction:column;gap:0;margin-top:2.5rem;position:relative}
+.framework-steps::before{content:'';position:absolute;left:20px;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,var(--accent),transparent);opacity:.3}
+.fstep{display:flex;align-items:flex-start;gap:1.5rem;padding:1.75rem 0;position:relative}
+.fstep:last-child{padding-bottom:0}
+.fstep-dot{width:40px;height:40px;border-radius:50%;background:var(--bg);border:1px solid var(--accent-border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:'JetBrains Mono',monospace;font-size:.68rem;font-weight:700;color:var(--accent);position:relative;z-index:1;transition:background .2s,border-color .2s}
+.fstep:hover .fstep-dot{background:var(--accent-dim);border-color:var(--accent)}
+.fstep-content{padding-top:.3rem}
+.fstep-title{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.4rem}
+.fstep-desc{font-size:.82rem;line-height:1.75;color:var(--text2)}
+.framework-right{position:relative}
+.arch-diagram{background:var(--bg3);border:1px solid var(--border);border-radius:var(--r3);padding:2rem;overflow:hidden;position:relative}
+.arch-diagram::before{content:'';position:absolute;top:-1px;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.arch-label{font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem}
+.arch-label::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--accent);animation:pulse-o 2s infinite}
+.arch-layers{display:flex;flex-direction:column;gap:.75rem}
+.arch-layer{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem;display:flex;align-items:center;justify-content:space-between;transition:border-color .2s,transform .2s}
+.arch-layer:hover{border-color:var(--accent-border);transform:translateX(4px)}
+.al-left{display:flex;align-items:center;gap:.75rem}
+.al-icon{font-size:1rem;width:32px;text-align:center}
+.al-name{font-family:'Space Grotesk',sans-serif;font-size:.84rem;font-weight:600}
+.al-tech{font-family:'JetBrains Mono',monospace;font-size:.6rem;color:var(--text3);letter-spacing:.04em}
+.al-badge{font-family:'JetBrains Mono',monospace;font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);padding:.18rem .55rem;border-radius:5px}
+.arch-connector{display:flex;justify-content:center;align-items:center;height:28px;position:relative}
+.arch-connector::before{content:'';width:1px;height:100%;background:linear-gradient(to bottom,var(--accent-border),transparent)}
+.arch-connector::after{content:'▼';position:absolute;bottom:-2px;font-size:.5rem;color:var(--accent);opacity:.5}
+
+/* TECH STACK */
+.stack-section{padding:7rem 2.5rem;max-width:1240px;margin:0 auto}
+.stack-categories{display:grid;grid-template-columns:repeat(4,1fr);gap:1.25rem;margin-top:3.5rem}
+.stack-cat{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:1.75rem;transition:border-color .25s,transform .25s}
+.stack-cat:hover{border-color:var(--accent-border);transform:translateY(-4px)}
+.sc-icon{font-size:1.5rem;margin-bottom:.85rem}
+.sc-title{font-family:'Space Grotesk',sans-serif;font-size:.88rem;font-weight:700;letter-spacing:-.01em;margin-bottom:1rem;color:var(--text)}
+.sc-chips{display:flex;flex-direction:column;gap:.4rem}
+.sc-chip{font-family:'JetBrains Mono',monospace;font-size:.68rem;padding:.32rem .7rem;border-radius:7px;background:var(--bg3);border:1px solid var(--border);color:var(--text2);letter-spacing:.02em;transition:border-color .2s,color .2s}
+.stack-cat:hover .sc-chip{border-color:rgba(249,115,22,.14);color:var(--text)}
+
+/* DELIVERABLES */
+.deliverables-section{padding:7rem 2.5rem;background:var(--bg2)}
+.deliverables-inner{max-width:1240px;margin:0 auto}
+.del-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--border);border-radius:var(--r3);overflow:hidden;margin-top:3.5rem}
+.del-item{background:var(--bg2);padding:2rem 2.25rem;position:relative;overflow:hidden;transition:background .2s}
+.del-item::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--accent);opacity:0;transition:opacity .25s}
+.del-item:hover{background:var(--bg3)}
+.del-item:hover::before{opacity:1}
+.del-check{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.25);color:#4ade80;font-size:.65rem;margin-bottom:.85rem;flex-shrink:0}
+.del-title{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.45rem}
+.del-desc{font-size:.82rem;line-height:1.75;color:var(--text2)}
+
+/* CASE STUDIES */
+.cases-section{padding:7rem 2.5rem;max-width:1240px;margin:0 auto}
+.case-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem;margin-top:3.5rem}
+.case-card{background:linear-gradient(155deg,rgba(255,255,255,.04),rgba(255,255,255,.015));border:1px solid var(--border);border-radius:var(--r3);padding:2.4rem;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.16,1,.3,1),border-color .3s,box-shadow .3s}
+.case-card::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(249,115,22,.1),transparent 55%);opacity:0;transition:opacity .35s}
+.case-card:hover{transform:translateY(-6px);border-color:rgba(249,115,22,.25);box-shadow:0 20px 50px rgba(0,0,0,.45)}
+.case-card:hover::before{opacity:1}
+.case-type{font-family:'JetBrains Mono',monospace;font-size:.6rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-dim);border:1px solid var(--accent-border);padding:.28rem .7rem;border-radius:6px;display:inline-block;margin-bottom:1.25rem}
+.case-card h3{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.7rem}
+.case-card p{font-size:.85rem;line-height:1.8;color:var(--text2);margin-bottom:1.5rem}
+.case-results{display:flex;flex-wrap:wrap;gap:.65rem}
+.case-result{display:flex;align-items:center;gap:.35rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:600;letter-spacing:.04em;color:#4ade80;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.18);border-radius:6px;padding:.32rem .7rem}
+.case-result::before{content:'↑';font-size:.7rem}
+
+/* FAQS */
+.faq-section{padding:7rem 2.5rem;background:var(--bg2)}
+.faq-inner{max-width:900px;margin:0 auto}
+.faq-list{margin-top:3.5rem;display:flex;flex-direction:column;gap:.75rem}
+.faq-item{border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;transition:border-color .25s}
+.faq-item.open{border-color:rgba(249,115,22,.28)}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:1.35rem 1.75rem;cursor:pointer;user-select:none;transition:background .2s}
+.faq-q:hover{background:var(--glass2)}
+.faq-q-text{font-family:'Space Grotesk',sans-serif;font-size:.95rem;font-weight:600;letter-spacing:-.01em}
+.faq-arrow{width:20px;height:20px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.6rem;color:var(--accent);transition:transform .25s,background .2s,border-color .2s;flex-shrink:0}
+.faq-item.open .faq-arrow{transform:rotate(180deg);background:var(--accent-dim);border-color:var(--accent-border)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease,padding .25s}
+.faq-a-inner{padding:0 1.75rem 1.35rem;font-size:.88rem;line-height:1.85;color:var(--text2);border-top:1px solid var(--border)}
+.faq-a-inner{padding-top:.85rem}
+.faq-item.open .faq-a{max-height:300px}
+
+/* CTA SECTION */
+.cta-section{padding:7rem 2.5rem;max-width:1240px;margin:0 auto}
+.cta-box{background:linear-gradient(135deg,rgba(249,115,22,.08),rgba(234,88,12,.04));border:1px solid rgba(249,115,22,.22);border-radius:var(--r3);padding:4rem;position:relative;overflow:hidden;text-align:center}
+.cta-box::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:300px;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+.cta-box h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;letter-spacing:-.02em;line-height:.95;text-transform:uppercase;margin-bottom:1rem}
+.cta-box h2 em{font-style:italic;color:var(--accent)}
+.cta-box p{font-size:.95rem;font-weight:300;color:var(--text2);line-height:1.8;max-width:480px;margin:0 auto 2.5rem}
+.cta-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+
+/* FOOTER */
+footer{border-top:1px solid var(--border);padding:2rem 2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-copy{font-size:.75rem;color:var(--text3)}
+.foot-copy strong{color:var(--text2);font-weight:600}
+.foot-links{display:flex;gap:1.75rem}
+.foot-links a{font-size:.75rem;font-weight:500;color:var(--text3);text-decoration:none;letter-spacing:.04em;transition:color .2s}
+.foot-links a:hover{color:var(--accent)}
+
+/* BACK LINK */
+.back-link{display:inline-flex;align-items:center;gap:.5rem;font-family:'JetBrains Mono',monospace;font-size:.65rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--text3);text-decoration:none;transition:color .2s;margin-bottom:1.5rem}
+.back-link:hover{color:var(--accent)}
+.back-link::before{content:'←';font-size:.7rem}
+
+/* RESPONSIVE */
+@media(max-width:1100px){
+  .hero-inner{grid-template-columns:1fr}.hero-panel{display:none}
+  .builds-grid{grid-template-columns:repeat(2,1fr)}
+  .framework-grid{grid-template-columns:1fr;gap:3rem}
+  .stack-categories{grid-template-columns:repeat(2,1fr)}
+  .case-grid{grid-template-columns:1fr}
+  .del-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  nav{padding:0 1.5rem}
+  .nav-links,.avail-badge,.btn-nav{display:none}
+  .ham{display:flex}
+  .svc-hero{padding:calc(var(--nav-h) + 3rem) 1.5rem 3rem}
+  .builds-section,.framework-section,.stack-section,.deliverables-section,.cases-section,.faq-section,.cta-section{padding:4.5rem 1.5rem}
+  .framework-inner,.deliverables-inner,.faq-inner{padding:0}
+  .builds-grid,.stack-categories{grid-template-columns:1fr}
+  .cta-box{padding:2.5rem 1.5rem}
+  footer{flex-direction:column;align-items:flex-start;padding:1.5rem}
+}
+@media(max-width:480px){
+  .hero-btns,.cta-btns{flex-direction:column}
+  .btn-primary,.btn-outline{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div class="cur" id="cur"></div>
+<div class="cur-ring" id="ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="logo">
+    <img src="daxora.png" alt="Daxora Labs">
+    <span>Daxora Labs</span>
+  </a>
+  <div class="nav-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#process">Process</a>
+    <a href="index.html#why">Why Us</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="avail-badge"><span class="avail-dot"></span>Available for projects</div>
+    <a href="index.html#contact" class="btn-nav">Book a Call →</a>
+    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="mob-nav" id="mobnav">
+  <a href="index.html#services">Services</a>
+  <a href="index.html#work">Work</a>
+  <a href="index.html#process">Process</a>
+  <a href="index.html#why">Why Us</a>
+  <a href="index.html#contact">Contact</a>
+  <a href="index.html#contact" class="mob-cta">Book a Call →</a>
+</div>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="hero-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+  </div>
+  <div class="hero-grid"></div>
+  <div class="hero-inner">
+    <div>
+      <a href="index.html" class="back-link">Back to Home</a>
+      <div class="breadcrumb">
+        <a href="index.html">Daxora Labs</a>
+        <span>/</span>
+        <span>Services</span>
+        <span>/</span>
+        <span>Full Stack Development</span>
+      </div>
+      <div class="hero-tag">01 / Development</div>
+      <h1>Full Stack<br><em>Development</em></h1>
+      <p class="hero-sub">We engineer scalable, production-grade web applications — from pixel-perfect frontends to bulletproof backends. Clean architecture, fast delivery, zero cut corners.</p>
+      <div class="hero-btns">
+        <a href="index.html#contact" class="btn-primary">Start Your Project →</a>
+        <a href="#builds" class="btn-outline">See What We Build ↓</a>
+      </div>
+      <div class="hero-metrics">
+        <div class="hm"><div class="hm-num">15+</div><div class="hm-label">Apps Shipped</div></div>
+        <div class="hm"><div class="hm-num">99%</div><div class="hm-label">Client Satisfaction</div></div>
+        <div class="hm"><div class="hm-num">30d</div><div class="hm-label">Post-Launch Support</div></div>
+      </div>
+    </div>
+    <div class="hero-panel">
+      <div class="panel-label">Our Tech Stack</div>
+      <div class="stack-row">
+        <div class="stack-item">
+          <div class="si-left">
+            <div class="si-icon">⚛️</div>
+            <div>
+              <div class="si-name">React / Next.js</div>
+              <div class="si-role">Frontend Layer</div>
+            </div>
+          </div>
+          <div class="si-badge">Primary</div>
+        </div>
+        <div class="stack-item">
+          <div class="si-left">
+            <div class="si-icon">🟢</div>
+            <div>
+              <div class="si-name">Node.js</div>
+              <div class="si-role">Backend / API</div>
+            </div>
+          </div>
+          <div class="si-badge">Primary</div>
+        </div>
+        <div class="stack-item">
+          <div class="si-left">
+            <div class="si-icon">🐘</div>
+            <div>
+              <div class="si-name">PostgreSQL</div>
+              <div class="si-role">Database</div>
+            </div>
+          </div>
+          <div class="si-badge">Primary</div>
+        </div>
+        <div class="stack-item">
+          <div class="si-left">
+            <div class="si-icon">☕</div>
+            <div>
+              <div class="si-name">Spring Boot</div>
+              <div class="si-role">Enterprise Java</div>
+            </div>
+          </div>
+          <div class="si-badge">Alt</div>
+        </div>
+      </div>
+      <div class="panel-divider"></div>
+      <div class="panel-label">Delivery Stats</div>
+      <div class="delivery-stat"><span class="ds-label">Avg. Delivery Time</span><span class="ds-val orange">3–6 Weeks</span></div>
+      <div class="delivery-stat"><span class="ds-label">Post-Launch Support</span><span class="ds-val green">30 Days Free</span></div>
+      <div class="delivery-stat"><span class="ds-label">Code Ownership</span><span class="ds-val green">100% Yours</span></div>
+      <div class="delivery-stat"><span class="ds-label">Architecture Docs</span><span class="ds-val green">Included</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span>SaaS Platforms</span><span>REST APIs</span><span>E-commerce</span><span>CRM Systems</span>
+    <span>Admin Dashboards</span><span>Booking Systems</span><span>Payment Integration</span><span>Auth Systems</span>
+    <span>SaaS Platforms</span><span>REST APIs</span><span>E-commerce</span><span>CRM Systems</span>
+    <span>Admin Dashboards</span><span>Booking Systems</span><span>Payment Integration</span><span>Auth Systems</span>
+  </div>
+</div>
+
+<div class="div"></div>
+
+<!-- WHAT WE BUILD -->
+<section class="builds-section" id="builds">
+  <div class="sec-head reveal">
+    <div class="eyebrow">What We Build</div>
+    <h2 class="sh">Every type of<br><em>web application</em></h2>
+    <p class="ss">From MVPs to enterprise-grade platforms — if it runs in a browser or on a server, we can build it.</p>
+  </div>
+  <div class="builds-grid">
+    <div class="build-card reveal">
+      <span class="build-num">01</span>
+      <div class="build-icon">📊</div>
+      <div class="build-name">SaaS Dashboards & Platforms</div>
+      <p class="build-desc">Multi-tenant SaaS apps with auth, billing, role-based access, analytics, and team management built on scalable architecture.</p>
+      <div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Stripe</span><span class="tag">Supabase</span></div>
+    </div>
+    <div class="build-card reveal">
+      <span class="build-num">02</span>
+      <div class="build-icon">🛒</div>
+      <div class="build-name">E-commerce Platforms</div>
+      <p class="build-desc">Custom storefronts, product catalogs, cart & checkout flows, payment gateways, and order management systems.</p>
+      <div class="tags"><span class="tag">Next.js</span><span class="tag">Stripe</span><span class="tag">PostgreSQL</span><span class="tag">CMS</span></div>
+    </div>
+    <div class="build-card reveal">
+      <span class="build-num">03</span>
+      <div class="build-icon">🔌</div>
+      <div class="build-name">REST API & Backend Systems</div>
+      <p class="build-desc">Robust, documented APIs with authentication, rate limiting, webhooks, and integrations — built for performance at scale.</p>
+      <div class="tags"><span class="tag">Node.js</span><span class="tag">FastAPI</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span></div>
+    </div>
+    <div class="build-card reveal">
+      <span class="build-num">04</span>
+      <div class="build-icon">📋</div>
+      <div class="build-name">CRM & Admin Panels</div>
+      <p class="build-desc">Internal tools, CRMs, and admin dashboards with real-time data, filtering, exports, and role-based access control.</p>
+      <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Charts</span><span class="tag">Auth</span></div>
+    </div>
+    <div class="build-card reveal">
+      <span class="build-num">05</span>
+      <div class="build-icon">📅</div>
+      <div class="build-name">Booking & Scheduling Systems</div>
+      <p class="build-desc">Appointment scheduling, availability management, confirmation flows, and calendar integrations for service businesses.</p>
+      <div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Calendar API</span><span class="tag">Notifications</span></div>
+    </div>
+    <div class="build-card reveal">
+      <span class="build-num">06</span>
+      <div class="build-icon">🌐</div>
+      <div class="build-name">Corporate & Marketing Sites</div>
+      <p class="build-desc">High-performance, SEO-optimised websites that convert visitors — fast load times, clean code, and CMS-ready content management.</p>
+      <div class="tags"><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">SEO</span><span class="tag">CMS</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- FRAMEWORK / PROCESS -->
+<section class="framework-section" id="process">
+  <div class="framework-inner">
+    <div class="framework-grid">
+      <div class="reveal">
+        <div class="eyebrow">Our Framework</div>
+        <h2 class="sh">How we<br><em>engineer</em> it</h2>
+        <p class="ss">A structured, iterative process that eliminates surprises and consistently ships production-quality work.</p>
+        <div class="framework-steps">
+          <div class="fstep">
+            <div class="fstep-dot">01</div>
+            <div class="fstep-content">
+              <div class="fstep-title">Requirements & Architecture</div>
+              <p class="fstep-desc">We map every feature, define data models, choose the right stack for your scale, and produce a full technical spec before writing a line of code.</p>
+            </div>
+          </div>
+          <div class="fstep">
+            <div class="fstep-dot">02</div>
+            <div class="fstep-content">
+              <div class="fstep-title">UI/UX Design & Prototyping</div>
+              <p class="fstep-desc">Figma wireframes and interactive prototypes reviewed and approved before development starts — no mid-build design pivots.</p>
+            </div>
+          </div>
+          <div class="fstep">
+            <div class="fstep-dot">03</div>
+            <div class="fstep-content">
+              <div class="fstep-title">Agile Build Sprints</div>
+              <p class="fstep-desc">Two-week sprints with working demos at each milestone. You see real progress, not just status updates.</p>
+            </div>
+          </div>
+          <div class="fstep">
+            <div class="fstep-dot">04</div>
+            <div class="fstep-content">
+              <div class="fstep-title">QA, Testing & Optimization</div>
+              <p class="fstep-desc">Cross-browser testing, load testing, security checks, and Lighthouse performance audits before anything goes live.</p>
+            </div>
+          </div>
+          <div class="fstep">
+            <div class="fstep-dot">05</div>
+            <div class="fstep-content">
+              <div class="fstep-title">Deployment & Handover</div>
+              <p class="fstep-desc">Cloud deployment, full code ownership, architecture docs, and 30 days of post-launch support included as standard.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="framework-right reveal">
+        <div class="arch-diagram">
+          <div class="arch-label">System Architecture</div>
+          <div class="arch-layers">
+            <div class="arch-layer">
+              <div class="al-left">
+                <div class="al-icon">🌐</div>
+                <div>
+                  <div class="al-name">Frontend Layer</div>
+                  <div class="al-tech">React · Next.js · Tailwind CSS</div>
+                </div>
+              </div>
+              <div class="al-badge">Client</div>
+            </div>
+            <div class="arch-connector"></div>
+            <div class="arch-layer">
+              <div class="al-left">
+                <div class="al-icon">⚙️</div>
+                <div>
+                  <div class="al-name">API / Business Logic</div>
+                  <div class="al-tech">Node.js · Spring Boot · FastAPI</div>
+                </div>
+              </div>
+              <div class="al-badge">Server</div>
+            </div>
+            <div class="arch-connector"></div>
+            <div class="arch-layer">
+              <div class="al-left">
+                <div class="al-icon">🔐</div>
+                <div>
+                  <div class="al-name">Auth & Security</div>
+                  <div class="al-tech">JWT · OAuth2 · Role-Based Access</div>
+                </div>
+              </div>
+              <div class="al-badge">Secure</div>
+            </div>
+            <div class="arch-connector"></div>
+            <div class="arch-layer">
+              <div class="al-left">
+                <div class="al-icon">🗄️</div>
+                <div>
+                  <div class="al-name">Database Layer</div>
+                  <div class="al-tech">PostgreSQL · MongoDB · Supabase</div>
+                </div>
+              </div>
+              <div class="al-badge">Storage</div>
+            </div>
+            <div class="arch-connector"></div>
+            <div class="arch-layer">
+              <div class="al-left">
+                <div class="al-icon">☁️</div>
+                <div>
+                  <div class="al-name">Cloud & DevOps</div>
+                  <div class="al-tech">Vercel · AWS · Docker · CI/CD</div>
+                </div>
+              </div>
+              <div class="al-badge">Infra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- TECH STACK -->
+<section class="stack-section">
+  <div class="sec-head reveal">
+    <div class="eyebrow">Technology</div>
+    <h2 class="sh">Our complete<br><em>tech stack</em></h2>
+    <p class="ss">We pick the best tool for the job — not the trendy one. Every technology in our stack is battle-tested in production.</p>
+  </div>
+  <div class="stack-categories">
+    <div class="stack-cat reveal">
+      <div class="sc-icon">⚛️</div>
+      <div class="sc-title">Frontend</div>
+      <div class="sc-chips">
+        <div class="sc-chip">React</div>
+        <div class="sc-chip">Next.js</div>
+        <div class="sc-chip">TypeScript</div>
+        <div class="sc-chip">Tailwind CSS</div>
+        <div class="sc-chip">HTML / CSS</div>
+        <div class="sc-chip">Framer Motion</div>
+      </div>
+    </div>
+    <div class="stack-cat reveal">
+      <div class="sc-icon">⚙️</div>
+      <div class="sc-title">Backend</div>
+      <div class="sc-chips">
+        <div class="sc-chip">Node.js</div>
+        <div class="sc-chip">Express.js</div>
+        <div class="sc-chip">Spring Boot</div>
+        <div class="sc-chip">FastAPI</div>
+        <div class="sc-chip">REST APIs</div>
+        <div class="sc-chip">WebSockets</div>
+      </div>
+    </div>
+    <div class="stack-cat reveal">
+      <div class="sc-icon">🗄️</div>
+      <div class="sc-title">Database</div>
+      <div class="sc-chips">
+        <div class="sc-chip">PostgreSQL</div>
+        <div class="sc-chip">MongoDB</div>
+        <div class="sc-chip">Supabase</div>
+        <div class="sc-chip">MySQL</div>
+        <div class="sc-chip">Redis</div>
+        <div class="sc-chip">Hibernate</div>
+      </div>
+    </div>
+    <div class="stack-cat reveal">
+      <div class="sc-icon">☁️</div>
+      <div class="sc-title">Cloud & DevOps</div>
+      <div class="sc-chips">
+        <div class="sc-chip">Vercel</div>
+        <div class="sc-chip">AWS</div>
+        <div class="sc-chip">Docker</div>
+        <div class="sc-chip">GitHub Actions</div>
+        <div class="sc-chip">Nginx</div>
+        <div class="sc-chip">CI / CD</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- DELIVERABLES -->
+<section class="deliverables-section">
+  <div class="deliverables-inner">
+    <div class="sec-head reveal">
+      <div class="eyebrow">What You Get</div>
+      <h2 class="sh">Every project<br><em>includes</em></h2>
+      <p class="ss">We don't deliver just code. Every engagement comes with full documentation, ownership, and support baked in.</p>
+    </div>
+    <div class="del-grid">
+      <div class="del-item reveal">
+        <div class="del-check">✓</div>
+        <div class="del-title">Full Source Code Ownership</div>
+        <p class="del-desc">100% of the codebase is yours at handoff — no vendor lock-in, no recurring license fees, no dependency on us to keep it running.</p>
+      </div>
+      <div class="del-item reveal">
+        <div class="del-check">✓</div>
+        <div class="del-title">Architecture Documentation</div>
+        <p class="del-desc">Detailed technical docs covering system design, data models, API contracts, and deployment guides — so any developer can pick it up.</p>
+      </div>
+      <div class="del-item reveal">
+        <div class="del-check">✓</div>
+        <div class="del-title">Production Deployment</div>
+        <p class="del-desc">We handle cloud setup, domain configuration, SSL certificates, environment variables, and the full deployment pipeline.</p>
+      </div>
+      <div class="del-item reveal">
+        <div class="del-check">✓</div>
+        <div class="del-title">15-Day Post-Launch Support</div>
+        <p class="del-desc">A full month of free bug fixes, minor updates, and direct developer access after your project goes live. No extra cost.</p>
+      </div>
+      <div class="del-item reveal">
+        <div class="del-check">✓</div>
+        <div class="del-title">Performance & SEO Audit</div>
+        <p class="del-desc">Lighthouse score optimisation, Core Web Vitals improvements, image optimisation, and technical SEO foundations built in.</p>
+      </div>
+      <div class="del-item reveal">
+        <div class="del-check">✓</div>
+        <div class="del-title">Responsive & Accessible</div>
+        <p class="del-desc">Every interface is fully responsive across all devices and follows WCAG accessibility standards by default — not as an afterthought.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- CASE STUDIES -->
+<section class="cases-section">
+  <div class="sec-head reveal">
+    <div class="eyebrow">Case Studies</div>
+    <h2 class="sh">Real projects,<br><em>real results</em></h2>
+    <p class="ss">Live URLs are protected under client confidentiality agreements, but the outcomes speak for themselves.</p>
+  </div>
+  <div class="case-grid">
+    <div class="case-card reveal">
+      <span class="case-type">CRM / Web App · 2026</span>
+      <h3>Sales CRM Dashboard</h3>
+      <p>Built a full-featured sales CRM for a growing B2B team — lead pipeline, deal tracking, team performance dashboards, and automated follow-up reminders. Migrated them off spreadsheets entirely.</p>
+      <div class="tags" style="margin-bottom:1.25rem"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span></div>
+      <div class="case-results">
+        <div class="case-result">Deal close rate +35%</div>
+        <div class="case-result">Manual data entry eliminated</div>
+      </div>
+    </div>
+    <div class="case-card reveal">
+      <span class="case-type">Productivity App · 2023</span>
+      <h3>Employee Timesheets Platform</h3>
+      <p>Designed and shipped a timesheet management platform for a services firm — hour logging, project tagging, manager approvals, and clean weekly PDF exports integrated with payroll.</p>
+      <div class="tags" style="margin-bottom:1.25rem"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">PDF Export</span></div>
+      <div class="case-results">
+        <div class="case-result">Reporting time reduced by 40%</div>
+        <div class="case-result">Payroll errors eliminated</div>
+      </div>
+    </div>
+    <div class="case-card reveal">
+      <span class="case-type">Website · 2024</span>
+      <h3>Corporate Lead-Gen Website</h3>
+      <p>Rebuilt a legacy corporate website from scratch with Next.js — optimised for Core Web Vitals, integrated with a CMS, and redesigned conversion flows. Inbound leads doubled within 60 days of launch.</p>
+      <div class="tags" style="margin-bottom:1.25rem"><span class="tag">Next.js</span><span class="tag">Tailwind</span><span class="tag">CMS</span><span class="tag">SEO</span></div>
+      <div class="case-results">
+        <div class="case-result">Load time improved 60%</div>
+        <div class="case-result">Inbound leads 2×</div>
+      </div>
+    </div>
+    <div class="case-card reveal">
+      <span class="case-type">Web App · 2025</span>
+      <h3>Interactive Quiz Platform</h3>
+      <p>Built a gamified quiz platform with real-time scoring, timed rounds, category-based question banks, leaderboards, and user authentication — scaling to hundreds of concurrent sessions.</p>
+      <div class="tags" style="margin-bottom:1.25rem"><span class="tag">React</span><span class="tag">Spring Boot</span><span class="tag">Java</span><span class="tag">Hibernate</span></div>
+      <div class="case-results">
+        <div class="case-result">Sign-ups 3× in month 1</div>
+        <div class="case-result">Sub-200ms response times</div>
+      </div>
+    </div>
+    <div class="case-card reveal">
+  <span class="case-type">Enterprise Web App · 2026</span>
+
+  <h3>Corporate Exam Portal</h3>
+
+  <p>
+    Developed an enterprise-grade examination and certification platform
+    for corporate training programs — including role-based access,
+    secure assessments, real-time scoring, analytics dashboards,
+    timed evaluations, and centralized question management.
+  </p>
+
+  <div class="tags" style="margin-bottom:1.25rem">
+    <span class="tag">React</span>
+    <span class="tag">Spring Boot</span>
+    <span class="tag">PostgreSQL</span>
+    <span class="tag">JWT Auth</span>
+  </div>
+
+  <div class="case-results">
+    <div class="case-result">Assessment process automated</div>
+    <div class="case-result">Concurrent multi-user support</div>
+  </div>
+</div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="sec-head reveal" style="text-align:center;margin:0 auto 0">
+      <div class="eyebrow" style="justify-content:center;margin-bottom:.8rem">
+        <span style="width:18px;height:1px;background:var(--accent);display:block"></span>
+        FAQ
+      </div>
+      <h2 class="sh">Common <em>questions</em></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How long does a typical project take?</span>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Most projects fall between 3 and 8 weeks depending on scope. A simple marketing site or MVP takes 2–3 weeks. A full SaaS platform with custom auth, dashboards, and integrations typically runs 6–10 weeks. We give you a fixed timeline in the proposal so there are no surprises.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Do I own the code after the project?</span>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes, 100%. At handoff you receive the complete source code, repository access, and all architecture documentation. There are no ongoing license fees or lock-in. You can host it anywhere and hire any developer to maintain it.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">What if I only have an idea, not a full spec?</span>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">That's completely fine — most clients come to us with an idea rather than a detailed spec. Our discovery process helps you define the right features, architecture, and scope. We'll create the technical spec together before development begins.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Can you work with our existing codebase?</span>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes. We regularly take over, refactor, or extend existing codebases. We'll audit what you have, flag technical debt, and propose the most efficient path forward — whether that's building on top of it or recommending a strategic rebuild.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">Do you offer maintenance after the 30-day support period?</span>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes, we offer optional monthly retainer plans for ongoing maintenance, feature additions, and technical support. Many clients stay on a retainer after launch. Retainer pricing is discussed separately based on your expected monthly needs.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          <span class="faq-q-text">How are projects priced?</span>
+          <div class="faq-arrow">▼</div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">We work on fixed-price project contracts — no hourly surprises. After the discovery call, we send a detailed proposal with a locked scope, price, and timeline. Payment is milestone-based (typically 40% upfront, 30% at mid-point, 30% at delivery). We don't do open-ended hourly billing.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="div"></div>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-box reveal">
+    <h2>Ready to build something<br><em>exceptional?</em></h2>
+    <p>Tell us about your project — we'll respond within 24 hours with initial thoughts and next steps. No pressure, no sales pitch.</p>
+    <div class="cta-btns">
+      <a href="index.html#contact" class="btn-primary">Start Your Project →</a>
+      <a href="mailto:daxoralabs@outlook.com" class="btn-outline">Email Us Directly</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="foot-copy">© 2026 <strong>Daxora Labs</strong> — All Rights Reserved</span>
+  <div class="foot-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#process">Process</a>
+    <a href="index.html#why">Why Us</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+// Cursor
+if(window.matchMedia('(pointer:fine)').matches){
+  const c=document.getElementById('cur'),r=document.getElementById('ring');
+  document.addEventListener('mousemove',e=>{
+    c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';
+    setTimeout(()=>{r.style.left=e.clientX+'px';r.style.top=e.clientY+'px'},85);
+  });
+  document.querySelectorAll('a,button,.build-card,.case-card,.faq-item').forEach(el=>{
+    el.addEventListener('mouseenter',()=>{r.style.width='44px';r.style.height='44px';r.style.borderColor='rgba(249,115,22,.7)'});
+    el.addEventListener('mouseleave',()=>{r.style.width='28px';r.style.height='28px';r.style.borderColor='rgba(249,115,22,.45)'});
+  });
+}
+
+// Hamburger
+const ham=document.getElementById('ham'),mob=document.getElementById('mobnav');
+ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open')});
+mob.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{ham.classList.remove('open');mob.classList.remove('open')}));
+
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').style.background=window.scrollY>50?'rgba(6,6,10,.97)':'rgba(6,6,10,.8)';
+});
+
+// Reveal
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.08});
+document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.09+'s';obs.observe(el)});
+
+// FAQ
+function toggleFaq(el){
+  const item=el.closest('.faq-item');
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
+}
+</script>
+</body>
+</html>
