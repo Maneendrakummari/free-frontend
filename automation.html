@@ -761,17 +761,19 @@ nav{
 /* ========================= */
 
 footer{
-  border-top:1px solid var(--border);
-
-  padding:2rem 2.5rem;
-
-  display:flex;
-  justify-content:space-between;
-
-  color:var(--text3);
-
-  font-size:.8rem;
+  border-top:1px solid var(--border);padding:2rem 2.5rem;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;
 }
+.foot-copy{font-size:.75rem;color:var(--text3)}
+.foot-copy strong{color:var(--text2);font-weight:600}
+.foot-links{display:flex;gap:1.75rem}
+.foot-links a{
+  font-size:.75rem;font-weight:500;color:var(--text3);
+  text-decoration:none;letter-spacing:.04em;transition:color .2s;
+}
+.foot-links a:hover{color:var(--accent)}
+
 
 /* ========================= */
 /* RESPONSIVE */
@@ -1319,15 +1321,14 @@ Book an AI Strategy Call →
 <!-- FOOTER -->
 
 <footer>
-
-<div>
-© 2026 Daxora Labs
-</div>
-
-<div>
-Engineered intelligent automation systems
-</div>
-
+  <span class="foot-copy">© 2026 <strong>Daxora Labs</strong> — All Rights Reserved</span>
+  <div class="foot-links">
+    <a href="index.html#services">Services</a>
+    <a href="index.html#work">Work</a>
+    <a href="index.html#process">Process</a>
+    <a href="index.html#why">Why Us</a>
+    <a href="index.html#contact">Contact</a>
+  </div>
 </footer>
 
 </body>
