@@ -767,6 +767,248 @@ option{background:var(--bg2)}
   box-shadow:0 4px 22px rgba(249,115,22,.38);
 }
 .btn-send:hover{opacity:.9;transform:translateY(-2px);box-shadow:0 8px 30px rgba(249,115,22,.5)}
+/* ============================================================
+   DAXORA CORE PILLARS — append to the bottom of style.css
+   ============================================================ */
+
+/* ---------- Section wrapper ---------- */
+.pillars-section {
+  position: relative;
+  padding: 6rem 0 7rem;
+  overflow: hidden;
+  background: #06060a;
+}
+
+/* Subtle dot-grid background */
+.pillars-bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(249,115,22,.08) 1px, transparent 1px);
+  background-size: 36px 36px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient orbs */
+.pillars-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(90px);
+  pointer-events: none;
+  z-index: 0;
+}
+.pillars-orb1 {
+  width: 420px; height: 420px;
+  background: radial-gradient(circle, rgba(249,115,22,.13), transparent 70%);
+  top: -80px; left: -120px;
+  animation: pillar-orb-float 8s ease-in-out infinite alternate;
+}
+.pillars-orb2 {
+  width: 300px; height: 300px;
+  background: radial-gradient(circle, rgba(249,115,22,.09), transparent 70%);
+  bottom: -60px; right: -60px;
+  animation: pillar-orb-float 11s ease-in-out infinite alternate-reverse;
+}
+@keyframes pillar-orb-float {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(30px, 20px) scale(1.07); }
+}
+
+/* Keep inner content above backgrounds */
+.pillars-section .inner,
+.pillars-section .sec-head {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------- Giant word display ---------- */
+.pillars-word {
+  display: flex;
+  justify-content: center;
+  gap: clamp(.5rem, 2vw, 1.6rem);
+  margin: 2.8rem 0 3.4rem;
+  position: relative;
+  z-index: 1;
+}
+.pw-letter {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(249,115,22,.25);
+  letter-spacing: .04em;
+  transition: color .25s ease, -webkit-text-stroke-color .25s ease,
+              text-shadow .25s ease, transform .25s ease;
+  cursor: default;
+  user-select: none;
+}
+.pw-letter.active,
+.pw-letter:hover {
+  color: var(--accent, #f97316);
+  -webkit-text-stroke-color: var(--accent, #f97316);
+  text-shadow: 0 0 40px rgba(249,115,22,.55), 0 0 80px rgba(249,115,22,.25);
+  transform: translateY(-6px) scale(1.08);
+}
+
+/* ---------- Cards grid ---------- */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1100px) {
+  .pillars-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 700px) {
+  .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 440px) {
+  .pillars-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- Individual pillar card ---------- */
+.pillar-card {
+  position: relative;
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.07);
+  border-radius: 16px;
+  padding: 1.5rem 1.2rem 1.4rem;
+  overflow: hidden;
+  cursor: default;
+  transition: transform .3s ease, border-color .3s ease, background .3s ease;
+}
+.pillar-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(249,115,22,.06) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity .35s ease;
+  border-radius: inherit;
+}
+.pillar-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(249,115,22,.35);
+  background: rgba(249,115,22,.04);
+}
+.pillar-card:hover::before { opacity: 1; }
+
+/* Glow blob on hover */
+.pc-glow {
+  position: absolute;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, rgba(249,115,22,.35), transparent 70%);
+  border-radius: 50%;
+  top: -30px; right: -30px;
+  filter: blur(30px);
+  opacity: 0;
+  transition: opacity .4s ease;
+  pointer-events: none;
+}
+.pillar-card:hover .pc-glow { opacity: 1; }
+
+/* Bottom accent line */
+.pc-border-line {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent, #f97316), transparent);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .4s ease;
+}
+.pillar-card:hover .pc-border-line { transform: scaleX(1); }
+
+/* Big letter badge */
+.pc-letter-badge {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(249,115,22,.2);
+  margin-bottom: .6rem;
+  transition: color .25s, -webkit-text-stroke-color .25s, text-shadow .25s;
+}
+.pillar-card:hover .pc-letter-badge {
+  color: var(--accent, #f97316);
+  -webkit-text-stroke-color: var(--accent, #f97316);
+  text-shadow: 0 0 24px rgba(249,115,22,.4);
+}
+
+/* Card content */
+.pc-service {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: .6rem;
+  font-weight: 500;
+  letter-spacing: .12em;
+  color: var(--accent, #f97316);
+  text-transform: uppercase;
+  margin-bottom: .45rem;
+}
+.pc-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+  color: #f5f4f2;
+  margin-bottom: .65rem;
+  line-height: 1.1;
+}
+.pc-highlight {
+  color: var(--accent, #f97316);
+}
+.pc-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: .75rem;
+  line-height: 1.6;
+  color: rgba(245,244,242,.55);
+  margin-bottom: .9rem;
+}
+.pc-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+
+/* Flash pulse when a letter is clicked */
+@keyframes pc-flash-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(249,115,22,.6); }
+  60%  { box-shadow: 0 0 0 14px rgba(249,115,22,0); }
+  100% { box-shadow: 0 0 0 0 rgba(249,115,22,0); }
+}
+.pc-flash {
+  animation: pc-flash-pulse .7s ease forwards;
+}
+
+/* Staggered reveal delays for cards */
+.pillar-card:nth-child(1) { transition-delay: .05s; }
+.pillar-card:nth-child(2) { transition-delay: .12s; }
+.pillar-card:nth-child(3) { transition-delay: .19s; }
+.pillar-card:nth-child(4) { transition-delay: .26s; }
+.pillar-card:nth-child(5) { transition-delay: .33s; }
+.pillar-card:nth-child(6) { transition-delay: .40s; }
+
+/* Ensure cards participate in scroll-reveal (.in class added by existing observer) */
+.pillar-card.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .55s ease, transform .55s ease, border-color .3s ease, background .3s ease;
+}
+.pillar-card.reveal.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Override hover transform when visible */
+.pillar-card.reveal.in:hover {
+  transform: translateY(-6px);
+}
 
 
 /* ── FOOTER ── */
