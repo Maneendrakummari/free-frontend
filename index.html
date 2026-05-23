@@ -1,1037 +1,1406 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Daxora Labs — A Digital Service Agency</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daxora Labs — A Digital Service Agency</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700;1,800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<div class="grain"></div>
-<div class="cur" id="cur"></div>
-<div class="cur-ring" id="ring"></div>
+  <div class="grain"></div>
+  <div class="cur" id="cur"></div>
+  <div class="cur-ring" id="ring"></div>
 
-<!-- NAV -->
-<nav id="nav">
-  <a href="#" class="logo">
-  <img src="daxora.png" alt="Daxora Labs">
-  <span>Daxora Labs</span>
-</a>
-  <div class="nav-links">
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="#" class="logo">
+      <img src="daxora.png" alt="Daxora Labs">
+      <span>Daxora Labs</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <div class="avail-badge"><span class="avail-dot"></span>Available for projects</div>
+      <a href="#contact" class="btn-nav">Book a Call →</a>
+      <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <div class="mob-nav" id="mobnav">
     <a href="#services">Services</a>
     <a href="#work">Work</a>
     <a href="#process">Process</a>
     <a href="#why">Why Us</a>
     <a href="#contact">Contact</a>
+    <a href="#contact" class="mob-cta">Book a Call →</a>
   </div>
-  <div class="nav-right">
-    <div class="avail-badge"><span class="avail-dot"></span>Available for projects</div>
-    <a href="#contact" class="btn-nav">Book a Call →</a>
-    <button class="ham" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
-  </div>
-</nav>
 
-<div class="mob-nav" id="mobnav">
-  <a href="#services">Services</a>
-  <a href="#work">Work</a>
-  <a href="#process">Process</a>
-  <a href="#why">Why Us</a>
-  <a href="#contact">Contact</a>
-  <a href="#contact" class="mob-cta">Book a Call →</a>
-</div>
-
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-orbs">
-    <div class="orb orb1"></div>
-    <div class="orb orb2"></div>
-    <div class="orb orb3"></div>
-  </div>
-  <div class="hero-grid"></div>
-  <div class="hero-inner">
-    <div>
-      <div class="hero-tag">A Digital Service Agency </div>
-      <h1>
-        We build<br>
-        <span>digital systems</span><br>
-        that scale
-      </h1>
-      <p class="hero-sub">
-        Daxora Labs is a full-service digital team helping startups,
-        creators &amp; businesses launch
-        <strong>high-converting websites, scalable systems, AI automations,
-        and growth-focused digital experiences.</strong>
-      </p>
-      <div class="hero-btns">
-        <a href="#work" class="btn-primary">View Our Work ↓</a>
-        <a href="#contact" class="btn-outline">Book a Call →</a>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-orbs">
+      <div class="orb orb1"></div>
+      <div class="orb orb2"></div>
+      <div class="orb orb3"></div>
+    </div>
+    <div class="hero-grid"></div>
+    <div class="hero-inner">
+      <div>
+        <div class="hero-tag">A Digital Service Agency </div>
+        <h1>
+          We build<br>
+          <span>digital systems</span><br>
+          that scale
+        </h1>
+        <p class="hero-sub">
+          Daxora Labs is a full-service digital team helping startups,
+          creators &amp; businesses launch
+          <strong>high-converting websites, scalable systems, AI automations,
+            and growth-focused digital experiences.</strong>
+        </p>
+        <div class="hero-btns">
+          <a href="#work" class="btn-primary">View Our Work ↓</a>
+          <a href="#contact" class="btn-outline">Book a Call →</a>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <div class="stats-grid">
+          <div class="stat">
+            <div class="stat-n">20<sup>+</sup></div>
+            <div class="stat-l">Projects Delivered</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">20<sup>+</sup></div>
+            <div class="stat-l">Global Clients</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">6<sup>+</sup></div>
+            <div class="stat-l">Core Services</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">99<sup>%</sup></div>
+            <div class="stat-l">Satisfaction Rate</div>
+          </div>
+        </div>
+        <div class="stack-label">Core Tech Stack</div>
+        <div class="chips">
+          <span class="chip">React</span>
+          <span class="chip">Next.js</span>
+          <span class="chip">Node.js</span>
+          <span class="chip">PostgreSQL</span>
+          <span class="chip">FastAPI</span>
+          <span class="chip">Spring Boot</span>
+          <span class="chip">Tailwind</span>
+          <span class="chip">Figma</span>
+        </div>
       </div>
     </div>
-    <div class="hero-panel">
-      <div class="stats-grid">
-        <div class="stat">
-          <div class="stat-n">20<sup>+</sup></div>
-          <div class="stat-l">Projects Delivered</div>
-        </div>
-        <div class="stat">
-          <div class="stat-n">20<sup>+</sup></div>
-          <div class="stat-l">Global Clients</div>
-        </div>
-        <div class="stat">
-          <div class="stat-n">6<sup>+</sup></div>
-          <div class="stat-l">Core Services</div>
-        </div>
-        <div class="stat">
-          <div class="stat-n">99<sup>%</sup></div>
-          <div class="stat-l">Satisfaction Rate</div>
-        </div>
-      </div>
-      <div class="stack-label">Core Tech Stack</div>
-      <div class="chips">
-        <span class="chip">React</span>
-        <span class="chip">Next.js</span>
-        <span class="chip">Node.js</span>
-        <span class="chip">PostgreSQL</span>
-        <span class="chip">FastAPI</span>
-        <span class="chip">Spring Boot</span>
-        <span class="chip">Tailwind</span>
-        <span class="chip">Figma</span>
-      </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee-wrap">
+    <div class="marquee-track" id="mq">
+      <span>Full Stack Development</span><span>AI Automation</span><span>Digital Marketing</span>
+      <span>UI/UX Design</span><span>No-Code Solutions</span><span>Brand Strategy</span>
+      <span>Full Stack Development</span><span>AI Automation</span><span>Digital Marketing</span>
+      <span>UI/UX Design</span><span>No-Code Solutions</span><span>Brand Strategy</span>
     </div>
   </div>
-</section>
 
-<!-- MARQUEE -->
-<div class="marquee-wrap">
-  <div class="marquee-track" id="mq">
-    <span>Full Stack Development</span><span>AI Automation</span><span>Digital Marketing</span>
-    <span>UI/UX Design</span><span>No-Code Solutions</span><span>Brand Strategy</span>
-    <span>Full Stack Development</span><span>AI Automation</span><span>Digital Marketing</span>
-    <span>UI/UX Design</span><span>No-Code Solutions</span><span>Brand Strategy</span>
-  </div>
-</div>
+  <div class="div"></div>
+  <!-- ============================================================
+     DAXORA CORE PILLARS SECTION
+     ============================================================ -->
 
-<div class="div"></div>
+  <!-- DAXORA CORE PILLARS -->
+  <section class="pillars-section" id="pillars">
+    <div class="pillars-bg-grid"></div>
+    <div class="pillars-orb pillars-orb1"></div>
+    <div class="pillars-orb pillars-orb2"></div>
 
-<!-- SERVICES -->
-<div class="wrap-full svc-bg" id="services">
-  <div class="inner">
-    <div class="sec-head reveal">
-      <div class="eyebrow">What We Do</div>
-      <h2 class="sh">Scalable <em>digital</em><br>solutions</h2>
-      <p class="ss">From development and AI automation to branding and growth — our team delivers complete digital solutions under one roof.</p>
-    </div>
-    <div class="svc-grid">
-
-      <!-- 01 -->
-<div class="svc-card reveal">
-
-  <span class="svc-num">01 / DEVELOPMENT</span>
-
-  <div class="svc-icon">⚡</div>
-
-  <div class="svc-name">
-    Full Stack Development
-  </div>
-
-  <p class="svc-desc">
-    Scalable modern web applications from frontend to backend
-    with performance, security,
-    and clean architecture in mind.
-  </p>
-
-  <div class="tags">
-    <span class="tag">React</span>
-    <span class="tag">Next.js</span>
-    <span class="tag">Node.js</span>
-    <span class="tag">PostgreSQL</span>
-    <span class="tag">REST APIs</span>
-  </div>
-
-  <a href="service-development.html"
-     style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
-     onmouseover="this.style.opacity='.7'"
-     onmouseout="this.style.opacity='1'">
-
-    Deep Dive →
-
-  </a>
-
-</div>
- <!-- 02 -->
-<div class="svc-card reveal">
-
-  <span class="svc-num">02 / GROWTH</span>
-
-  <div class="svc-icon">📈</div>
-
-  <div class="svc-name">
-    Digital Marketing
-  </div>
-
-  <p class="svc-desc">
-    Growth-focused strategies designed to increase visibility,
-    leads, conversions, and long-term business growth.
-  </p>
-
-  <div class="tags">
-    <span class="tag">SEO</span>
-    <span class="tag">Google Ads</span>
-    <span class="tag">Lead Generation</span>
-    <span class="tag">Social Media</span>
-    <span class="tag">Analytics</span>
-  </div>
-
-  <a href="service-marketing.html"
-     style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
-     onmouseover="this.style.opacity='.7'"
-     onmouseout="this.style.opacity='1'">
-
-    Deep Dive →
-
-  </a>
-
-</div>
-
-
-<!-- 03 -->
-<div class="svc-card reveal">
-
-  <span class="svc-num">03 / INTELLIGENCE</span>
-
-  <div class="svc-icon">🤖</div>
-
-  <div class="svc-name">
-    AI & Automation
-  </div>
-
-  <p class="svc-desc">
-    Smart automation systems and AI-powered workflows
-    that save time, automate operations,
-    and improve customer engagement.
-  </p>
-
-  <div class="tags">
-    <span class="tag">AI Chatbots</span>
-    <span class="tag">AI Agents</span>
-    <span class="tag">Automation</span>
-    <span class="tag">WhatsApp Bots</span>
-    <span class="tag">API Integrations</span>
-  </div>
-
-  <a href="automation.html"
-     style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
-     onmouseover="this.style.opacity='.7'"
-     onmouseout="this.style.opacity='1'">
-
-    Deep Dive →
-
-  </a>
-
-</div>
-     <!-- 04 -->
-<div class="svc-card reveal">
-
-  <span class="svc-num">04 / DESIGN</span>
-
-  <div class="svc-icon">🎨</div>
-
-  <div class="svc-name">
-    UI/UX & Design
-  </div>
-
-  <p class="svc-desc">
-    Clean, modern, conversion-focused interfaces
-    designed to create seamless digital experiences
-    across all devices.
-  </p>
-
-  <div class="tags">
-    <span class="tag">Figma</span>
-    <span class="tag">UI Design</span>
-    <span class="tag">UX Design</span>
-    <span class="tag">Responsive</span>
-    <span class="tag">Design Systems</span>
-  </div>
-
-  <a href="service-uiux.html"
-     style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
-     onmouseover="this.style.opacity='.7'"
-     onmouseout="this.style.opacity='1'">
-
-    Deep Dive →
-
-  </a>
-
-</div>
-      <!-- 05 -->
-<div class="svc-card reveal">
-
-  <span class="svc-num">05 / NO-CODE</span>
-
-  <div class="svc-icon">🧩</div>
-
-  <div class="svc-name">
-    No-Code / Low-Code
-  </div>
-
-  <p class="svc-desc">
-    Rapid MVP and business system development
-    using modern no-code platforms
-    for faster time-to-market delivery.
-  </p>
-
-  <div class="tags">
-    <span class="tag">Webflow</span>
-    <span class="tag">Bubble</span>
-    <span class="tag">Shopify</span>
-    <span class="tag">Zapier</span>
-    <span class="tag">n8n</span>
-  </div>
-
-  <a href="service-nocode.html"
-     style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
-     onmouseover="this.style.opacity='.7'"
-     onmouseout="this.style.opacity='1'">
-
-    Deep Dive →
-
-  </a>
-
-</div>
-      <!-- 06 -->
-<div class="svc-card reveal">
-
-  <span class="svc-num">06 / CONTENT</span>
-
-  <div class="svc-icon">🎬</div>
-
-  <div class="svc-name">
-    Content & Branding
-  </div>
-
-  <p class="svc-desc">
-    Content systems and brand strategies
-    built to grow audiences,
-    improve engagement,
-    and strengthen online presence.
-  </p>
-
-  <div class="tags">
-    <span class="tag">Content Creation</span>
-    <span class="tag">Video Editing</span>
-    <span class="tag">Brand Strategy</span>
-    <span class="tag">Social Media</span>
-    <span class="tag">Canva</span>
-  </div>
-
-  <a href="service-branding.html"
-     style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
-     onmouseover="this.style.opacity='.7'"
-     onmouseout="this.style.opacity='1'">
-
-    Deep Dive →
-
-  </a>
-
-</div>
-</div> <!-- svc-grid -->
-</div> <!-- inner -->
-</div> <!-- wrap-full -->
-
-<div class="div"></div>
-
-<!-- WORK -->
-<div class="wrap-full work-bg" id="work">
-  <div class="inner">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Selected Work</div>
-      <h2 class="sh">Projects we're<br><em>proud of</em></h2>
-      <p class="ss">Real clients, real deliverables, real results. Live URLs are protected under client confidentiality agreements.</p>
-    </div>
-
-    <div class="proj-grid">
-      <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <div class="proj-thumb-bg"></div>
-          <span class="proj-thumb-emoji">📊</span>
-          <div class="proj-thumb-lock">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Client Confidential</span>
-          </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="proj-type">CRM / Web App</span><span class="proj-yr">2026</span></div>
-          <div class="proj-name">CRM Dashboard</div>
-          <p class="proj-desc">Sales CRM for managing leads, tracking deals, and monitoring team performance in real time.</p>
-          <div class="proj-foot">
-            <div class="tags" style="margin:0"><span class="tag">React</span><span class="tag">Next.js</span></div>
-            <span class="conf-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Confidential</span>
-          </div>
-        </div>
+    <div class="inner">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Our Core Philosophy</div>
+        <h2 class="sh">The <em>DAXORA</em> pillars</h2>
+        <p class="ss">
+          Six core principles that power every project we deliver —
+          baked into our services from day one.
+        </p>
       </div>
-      <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <div class="proj-thumb-bg"></div>
-          <span class="proj-thumb-emoji">⏱</span>
-          <div class="proj-thumb-lock">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Client Confidential</span>
-          </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="proj-type">Productivity App</span><span class="proj-yr">2023</span></div>
-          <div class="proj-name">Timesheets Application</div>
-          <p class="proj-desc">Work platform for logging hours, tracking project time, and generating clean weekly reports.</p>
-          <div class="proj-foot">
-            <div class="tags" style="margin:0"><span class="tag">React</span><span class="tag">Next.js</span></div>
-            <span class="conf-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Confidential</span>
-          </div>
-        </div>
+
+      <!-- Big acronym display -->
+      <div class="pillars-word reveal">
+        <span class="pw-letter" data-idx="0">D</span>
+        <span class="pw-letter" data-idx="1">A</span>
+        <span class="pw-letter" data-idx="2">X</span>
+        <span class="pw-letter" data-idx="3">O</span>
+        <span class="pw-letter" data-idx="4">R</span>
+        <span class="pw-letter" data-idx="5">A</span>
       </div>
-      <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <div class="proj-thumb-bg"></div>
-          <span class="proj-thumb-emoji">🌐</span>
-          <div class="proj-thumb-lock">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Client Confidential</span>
+
+      <!-- Cards row -->
+      <div class="pillars-grid">
+
+        <div class="pillar-card reveal" data-letter="D" data-delay="0">
+          <div class="pc-letter-badge">D</div>
+          <div class="pc-body">
+            <div class="pc-service">01 / Development</div>
+            <div class="pc-title"><span class="pc-highlight">D</span>evelopment</div>
+            <p class="pc-desc">Full Stack &amp; No-Code Solutions built with clean architecture, performance-first code,
+              and modern tooling that scales.</p>
+            <div class="pc-tags">
+              <span class="tag">React</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">No-Code</span>
+            </div>
           </div>
+          <div class="pc-glow"></div>
+          <div class="pc-border-line"></div>
         </div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="proj-type">Website</span><span class="proj-yr">2024</span></div>
-          <div class="proj-name">Corporate Website</div>
-          <p class="proj-desc">Corporate website showcasing services, team, and driving inbound leads for the business.</p>
-          <div class="proj-foot">
-            <div class="tags" style="margin:0"><span class="tag">React</span><span class="tag">Next.js</span></div>
-            <span class="conf-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Confidential</span>
+
+        <div class="pillar-card reveal" data-letter="A" data-delay="1">
+          <div class="pc-letter-badge">A</div>
+          <div class="pc-body">
+            <div class="pc-service">02 / Intelligence</div>
+            <div class="pc-title"><span class="pc-highlight">A</span>utomation</div>
+            <p class="pc-desc">AI &amp; Intelligent Workflows that eliminate repetitive tasks, power smart bots, and
+              drive operational efficiency at scale.</p>
+            <div class="pc-tags">
+              <span class="tag">AI Agents</span>
+              <span class="tag">Workflows</span>
+              <span class="tag">n8n</span>
+            </div>
           </div>
+          <div class="pc-glow"></div>
+          <div class="pc-border-line"></div>
         </div>
+
+        <div class="pillar-card reveal" data-letter="X" data-delay="2">
+          <div class="pc-letter-badge">X</div>
+          <div class="pc-body">
+            <div class="pc-service">03 / Design</div>
+            <div class="pc-title">e<span class="pc-highlight">X</span>perience</div>
+            <p class="pc-desc">UI/UX &amp; Seamless Interfaces crafted to delight users, reduce friction, and convert
+              visitors into loyal customers.</p>
+            <div class="pc-tags">
+              <span class="tag">UI/UX</span>
+              <span class="tag">Figma</span>
+              <span class="tag">Design Systems</span>
+            </div>
+          </div>
+          <div class="pc-glow"></div>
+          <div class="pc-border-line"></div>
+        </div>
+
+        <div class="pillar-card reveal" data-letter="O" data-delay="3">
+          <div class="pc-letter-badge">O</div>
+          <div class="pc-body">
+            <div class="pc-service">04 / Growth</div>
+            <div class="pc-title"><span class="pc-highlight">O</span>ptimization</div>
+            <p class="pc-desc">SEO, Funnels &amp; Conversion strategies engineered to rank higher, capture more leads,
+              and maximize ROI on every channel.</p>
+            <div class="pc-tags">
+              <span class="tag">SEO</span>
+              <span class="tag">CRO</span>
+              <span class="tag">Funnels</span>
+            </div>
+          </div>
+          <div class="pc-glow"></div>
+          <div class="pc-border-line"></div>
+        </div>
+
+        <div class="pillar-card reveal" data-letter="R" data-delay="4">
+          <div class="pc-letter-badge">R</div>
+          <div class="pc-body">
+            <div class="pc-service">05 / Content</div>
+            <div class="pc-title"><span class="pc-highlight">R</span>each</div>
+            <p class="pc-desc">Digital Marketing &amp; Brand Strategy that builds awareness, grows audiences, and
+              positions your brand as the go-to authority.</p>
+            <div class="pc-tags">
+              <span class="tag">Marketing</span>
+              <span class="tag">Branding</span>
+              <span class="tag">Social</span>
+            </div>
+          </div>
+          <div class="pc-glow"></div>
+          <div class="pc-border-line"></div>
+        </div>
+
+        <div class="pillar-card reveal" data-letter="A2" data-delay="5">
+          <div class="pc-letter-badge">A</div>
+          <div class="pc-body">
+            <div class="pc-service">06 / Intelligence</div>
+            <div class="pc-title"><span class="pc-highlight">A</span>nalytics</div>
+            <p class="pc-desc">Data-Driven Growth &amp; Scaling powered by real metrics, actionable dashboards, and
+              continuous improvement loops.</p>
+            <div class="pc-tags">
+              <span class="tag">Analytics</span>
+              <span class="tag">Dashboards</span>
+              <span class="tag">Growth</span>
+            </div>
+          </div>
+          <div class="pc-glow"></div>
+          <div class="pc-border-line"></div>
+        </div>
+
+      </div><!-- /pillars-grid -->
+    </div><!-- /inner -->
+  </section>
+  <!-- /DAXORA CORE PILLARS -->
+
+  <!-- SERVICES -->
+  <div class="wrap-full svc-bg" id="services">
+    <div class="inner">
+      <div class="sec-head reveal">
+        <div class="eyebrow">What We Do</div>
+        <h2 class="sh">Scalable <em>digital</em><br>solutions</h2>
+        <p class="ss">From development and AI automation to branding and growth — our team delivers complete digital
+          solutions under one roof.</p>
       </div>
-      <div class="proj-card reveal">
-        <div class="proj-thumb">
-          <div class="proj-thumb-bg"></div>
-          <span class="proj-thumb-emoji">🧠</span>
-          <div class="proj-thumb-lock">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            <span>Client Confidential</span>
+      <div class="svc-grid">
+
+        <!-- 01 -->
+        <div class="svc-card reveal">
+
+          <span class="svc-num">01 / DEVELOPMENT</span>
+
+          <div class="svc-icon">⚡</div>
+
+          <div class="svc-name">
+            Full Stack Development
           </div>
-        </div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="proj-type">Web App</span><span class="proj-yr">2025</span></div>
-          <div class="proj-name">Quiz Application</div>
-          <p class="proj-desc">Interactive quiz platform with timed rounds, scoring, leaderboards, and multi-category question banks.</p>
-          <div class="proj-foot">
-            <div class="tags" style="margin:0"><span class="tag">React</span><span class="tag">Spring Boot</span><span class="tag">Java</span></div>
-            <span class="conf-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Confidential</span>
+
+          <p class="svc-desc">
+            Scalable modern web applications from frontend to backend
+            with performance, security,
+            and clean architecture in mind.
+          </p>
+
+          <div class="tags">
+            <span class="tag">React</span>
+            <span class="tag">Next.js</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">REST APIs</span>
           </div>
+
+          <a href="service-development.html"
+            style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
+            onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
+
+            Deep Dive →
+
+          </a>
+
         </div>
-         </div>
+        <!-- 02 -->
+        <div class="svc-card reveal">
+
+          <span class="svc-num">02 / GROWTH</span>
+
+          <div class="svc-icon">📈</div>
+
+          <div class="svc-name">
+            Digital Marketing
+          </div>
+
+          <p class="svc-desc">
+            Growth-focused strategies designed to increase visibility,
+            leads, conversions, and long-term business growth.
+          </p>
+
+          <div class="tags">
+            <span class="tag">SEO</span>
+            <span class="tag">Google Ads</span>
+            <span class="tag">Lead Generation</span>
+            <span class="tag">Social Media</span>
+            <span class="tag">Analytics</span>
+          </div>
+
+          <a href="service-marketing.html"
+            style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
+            onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
+
+            Deep Dive →
+
+          </a>
+
+        </div>
+
+
+        <!-- 03 -->
+        <div class="svc-card reveal">
+
+          <span class="svc-num">03 / INTELLIGENCE</span>
+
+          <div class="svc-icon">🤖</div>
+
+          <div class="svc-name">
+            AI & Automation
+          </div>
+
+          <p class="svc-desc">
+            Smart automation systems and AI-powered workflows
+            that save time, automate operations,
+            and improve customer engagement.
+          </p>
+
+          <div class="tags">
+            <span class="tag">AI Chatbots</span>
+            <span class="tag">AI Agents</span>
+            <span class="tag">Automation</span>
+            <span class="tag">WhatsApp Bots</span>
+            <span class="tag">API Integrations</span>
+          </div>
+
+          <a href="automation.html"
+            style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
+            onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
+
+            Deep Dive →
+
+          </a>
+
+        </div>
+        <!-- 04 -->
+        <div class="svc-card reveal">
+
+          <span class="svc-num">04 / DESIGN</span>
+
+          <div class="svc-icon">🎨</div>
+
+          <div class="svc-name">
+            UI/UX & Design
+          </div>
+
+          <p class="svc-desc">
+            Clean, modern, conversion-focused interfaces
+            designed to create seamless digital experiences
+            across all devices.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Figma</span>
+            <span class="tag">UI Design</span>
+            <span class="tag">UX Design</span>
+            <span class="tag">Responsive</span>
+            <span class="tag">Design Systems</span>
+          </div>
+
+          <a href="service-uiux.html"
+            style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
+            onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
+
+            Deep Dive →
+
+          </a>
+
+        </div>
+        <!-- 05 -->
+        <div class="svc-card reveal">
+
+          <span class="svc-num">05 / NO-CODE</span>
+
+          <div class="svc-icon">🧩</div>
+
+          <div class="svc-name">
+            No-Code / Low-Code
+          </div>
+
+          <p class="svc-desc">
+            Rapid MVP and business system development
+            using modern no-code platforms
+            for faster time-to-market delivery.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Webflow</span>
+            <span class="tag">Bubble</span>
+            <span class="tag">Shopify</span>
+            <span class="tag">Zapier</span>
+            <span class="tag">n8n</span>
+          </div>
+
+          <a href="service-nocode.html"
+            style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
+            onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
+
+            Deep Dive →
+
+          </a>
+
+        </div>
+        <!-- 06 -->
+        <div class="svc-card reveal">
+
+          <span class="svc-num">06 / CONTENT</span>
+
+          <div class="svc-icon">🎬</div>
+
+          <div class="svc-name">
+            Content & Branding
+          </div>
+
+          <p class="svc-desc">
+            Content systems and brand strategies
+            built to grow audiences,
+            improve engagement,
+            and strengthen online presence.
+          </p>
+
+          <div class="tags">
+            <span class="tag">Content Creation</span>
+            <span class="tag">Video Editing</span>
+            <span class="tag">Brand Strategy</span>
+            <span class="tag">Social Media</span>
+            <span class="tag">Canva</span>
+          </div>
+
+          <a href="service-branding.html"
+            style="display:inline-flex;align-items:center;gap:.45rem;margin-top:1.4rem;font-family:'Space Grotesk',sans-serif;font-size:.74rem;font-weight:700;letter-spacing:.02em;color:var(--accent);text-decoration:none;transition:opacity .2s"
+            onmouseover="this.style.opacity='.7'" onmouseout="this.style.opacity='1'">
+
+            Deep Dive →
+
+          </a>
+
+        </div>
+      </div> <!-- svc-grid -->
+    </div> <!-- inner -->
+  </div> <!-- wrap-full -->
+
+  <div class="div"></div>
+
+  <!-- WORK -->
+  <div class="wrap-full work-bg" id="work">
+    <div class="inner">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Selected Work</div>
+        <h2 class="sh">Projects we're<br><em>proud of</em></h2>
+        <p class="ss">Real clients, real deliverables, real results. Live URLs are protected under client
+          confidentiality agreements.</p>
+      </div>
+
+      <div class="proj-grid">
         <div class="proj-card reveal">
-  <div class="proj-thumb">
-    <div class="proj-thumb-bg"></div>
-    <span class="proj-thumb-emoji">📝</span>
-    <div class="proj-thumb-lock">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      <span>Client Confidential</span>
-    </div>
-  </div>
-  <div class="proj-body">
-    <div class="proj-meta"><span class="proj-type">Web App</span><span class="proj-yr">2026</span></div>
-    <div class="proj-name">Corporate Exam Portal</div>
-    <p class="proj-desc">Enterprise-grade exam platform for employee assessments, certifications, and training evaluations with role-based access and analytics.</p>
-    <div class="proj-foot">
-      <div class="tags" style="margin:0"><span class="tag">React</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span></div>
-      <span class="conf-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>Confidential</span>
-    </div>
-  </div>
-</div>
-      </div>
-    </div>
-        <div class="carousel-controls">
-      <button class="cc-btn" onclick="scrollProjects(-1)" aria-label="Previous">←</button>
-      <button class="cc-btn" onclick="scrollProjects(1)" aria-label="Next">→</button>
-    </div>
-
-    <div class="carousel-dots" id="projDots"></div>
-
-    <div class="proj-list">
-      <div class="prow reveal">
-        <span class="prow-num">01</span>
-        <div>
-          <div class="prow-name">CRM Dashboard</div>
-          <div class="prow-desc">Sales CRM for managing leads, tracking deals, and monitoring team performance</div>
-          <div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Dashboard</span></div>
-        </div>
-        <div class="prow-right">
-          <div class="prow-lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <span class="prow-cat">CRM / Web App</span><span class="prow-yr">2026</span>
-        </div>
-      </div>
-      <div class="prow reveal">
-        <span class="prow-num">02</span>
-        <div>
-          <div class="prow-name">Timesheets Application</div>
-          <div class="prow-desc">Work platform for logging employee hours, tracking project time, and generating weekly reports</div>
-          <div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Time Tracking</span></div>
-        </div>
-        <div class="prow-right">
-          <div class="prow-lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <span class="prow-cat">Productivity App</span><span class="prow-yr">2023</span>
-        </div>
-      </div>
-      <div class="prow reveal">
-        <span class="prow-num">03</span>
-        <div>
-          <div class="prow-name">Corporate Website</div>
-          <div class="prow-desc">Corporate website showcasing services, team, and driving inbound lead generation</div>
-          <div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Landing Page</span></div>
-        </div>
-        <div class="prow-right">
-          <div class="prow-lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <span class="prow-cat">Website</span><span class="prow-yr">2024</span>
-        </div>
-      </div>
-      <div class="prow reveal">
-        <span class="prow-num">04</span>
-        <div>
-          <div class="prow-name">Quiz Application</div>
-          <div class="prow-desc">Interactive quiz platform with timed rounds, scoring, leaderboards, and multi-category question banks</div>
-          <div class="tags"><span class="tag">React</span><span class="tag">Spring Boot</span><span class="tag">Hibernate</span><span class="tag">Java</span></div>
-        </div>
-        <div class="prow-right">
-          <div class="prow-lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-          <span class="prow-cat">Web App</span><span class="prow-yr">2025</span>
-        </div>
-      </div>
-      <div class="prow reveal">
-  <span class="prow-num">05</span>
-  <div>
-    <div class="prow-name">Corporate Exam Portal</div>
-    <div class="prow-desc">Enterprise exam platform for employee assessments, certifications, and training evaluations with analytics dashboard</div>
-    <div class="tags"><span class="tag">React</span><span class="tag">Spring Boot</span><span class="tag">PostgreSQL</span><span class="tag">Java</span></div>
-  </div>
-  <div class="prow-right">
-    <div class="prow-lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
-    <span class="prow-cat">Web App</span><span class="prow-yr">2026</span>
-  </div>
-</div>
-    </div>
-  </div>
-</div>
-
-
-<div class="div"></div>
-<section class="patents">
-  <div class="sec-head">
-    <div class="eyebrow">Innovation</div>
-
-    <h2 class="sh">
-      Patents <em>Applied</em>
-    </h2>
-
-    <p class="ss">
-      Innovative and research-driven technology systems currently under patent application and development.
-    </p>
-  </div>
-
-  <div class="patent-grid">
-
-    <!-- CARD 1 -->
-    <div class="patent-card">
-
-      <span class="patent-status">
-        Patent Applied
-      </span>
-
-      <h3>Patent Pending Technologies</h3>
-
-      <p>
-        Advanced digital systems and intelligent solutions designed for scalable real-world applications and innovation-focused development.
-      </p>
-
-      <div class="tags">
-        <span class="tag">Innovation</span>
-        <span class="tag">AI Systems</span>
-        <span class="tag">Research</span>
-      </div>
-
-    </div>
-
-    <!-- CARD 2 -->
-    <div class="patent-card">
-
-      <span class="patent-status">
-        Patent Applied
-      </span>
-
-      <h3>Confidential Technology Research</h3>
-
-      <p>
-        Research-oriented system architectures and emerging technology concepts currently progressing through patent application stages.
-      </p>
-
-      <div class="tags">
-        <span class="tag">Technology</span>
-        <span class="tag">Systems</span>
-        <span class="tag">Development</span>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-<!-- PROCESS -->
-<div class="wrap-full proc-bg" id="process">
-  <div class="inner">
-    <div class="sec-head reveal">
-      <div class="eyebrow">How We Work</div>
-      <h2 class="sh">Transparent process,<br><em>zero surprises</em></h2>
-      <p class="ss">Clear milestones and direct communication at every step of the journey.</p>
-    </div>
-    <div class="proc-grid">
-      <div class="proc-step reveal">
-        <div class="proc-top">
-          <span class="proc-n">01</span>
-          <div class="proc-icon-wrap">🎯</div>
-        </div>
-        <div class="proc-title">Discovery Call</div>
-        <p class="proc-desc">We talk through your goals, timeline, and budget. We ask the right questions before writing a single line of code.</p>
-      </div>
-      <div class="proc-step reveal">
-        <div class="proc-top">
-          <span class="proc-n">02</span>
-          <div class="proc-icon-wrap">📋</div>
-        </div>
-        <div class="proc-title">Proposal & Scope</div>
-        <p class="proc-desc">A clear proposal with deliverables, milestones, and fixed pricing. You know exactly what you're getting.</p>
-      </div>
-      <div class="proc-step reveal">
-        <div class="proc-top">
-          <span class="proc-n">03</span>
-          <div class="proc-icon-wrap">⚙️</div>
-        </div>
-        <div class="proc-title">Build & Review</div>
-        <p class="proc-desc">Iterative build cycles with regular updates. Feedback goes straight into the next sprint — no surprises.</p>
-      </div>
-      <div class="proc-step reveal">
-        <div class="proc-top">
-          <span class="proc-n">04</span>
-          <div class="proc-icon-wrap">🚀</div>
-        </div>
-        <div class="proc-title">Launch & Support</div>
-        <p class="proc-desc">Smooth deployment, handover docs, and 30 days of post-launch support included as standard.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="div"></div>
-
-<!-- TESTIMONIALS -->
-<div class="wrap-full" >
-  <div class="inner">
-    <div class="sec-head reveal">
-      <div class="eyebrow">Client Stories</div>
-      <h2 class="sh">What our <em>clients</em> say</h2>
-      <p class="ss">Real feedback from clients who trusted us to build their digital products.</p>
-    </div>
-
-    <div class="test-carousel-wrap">
-      <div class="test-scroll" id="testScroll">
-
-        <div class="tc reveal">
-          <div class="tc-top"><div class="tc-stars">★★★★★</div><div class="tc-qmark">"</div></div>
-          <p class="tc-text">Delivered the project two days early and the code quality was exceptional. Our load time dropped by 60%. I wouldn't hesitate to hire again.</p>
-          <div class="tc-div"></div>
-          <div class="tc-author">
-            <div class="tc-av">CS</div>
-            <div><div class="tc-name">Chandra Sekhar</div><div class="tc-role">CSR Associates</div></div>
+          <div class="proj-thumb">
+            <div class="proj-thumb-bg"></div>
+            <span class="proj-thumb-emoji">📊</span>
+            <div class="proj-thumb-lock">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <span>Client Confidential</span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta"><span class="proj-type">CRM / Web App</span><span class="proj-yr">2026</span></div>
+            <div class="proj-name">CRM Dashboard</div>
+            <p class="proj-desc">Sales CRM for managing leads, tracking deals, and monitoring team performance in real
+              time.</p>
+            <div class="proj-foot">
+              <div class="tags" style="margin:0"><span class="tag">React</span><span class="tag">Next.js</span></div>
+              <span class="conf-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>Confidential</span>
+            </div>
           </div>
         </div>
-
-        <div class="tc reveal">
-          <div class="tc-top"><div class="tc-stars">★★★★★</div><div class="tc-qmark">"</div></div>
-          <p class="tc-text">What stood out was the communication — always responsive, always clear. The dashboard looked exactly like our Figma, but better executed.</p>
-          <div class="tc-div"></div>
-          <div class="tc-author">
-            <div class="tc-av">PS</div>
-            <div><div class="tc-name">Pushpa</div><div class="tc-role">Apex Pipes, MD</div></div>
+        <div class="proj-card reveal">
+          <div class="proj-thumb">
+            <div class="proj-thumb-bg"></div>
+            <span class="proj-thumb-emoji">⏱</span>
+            <div class="proj-thumb-lock">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <span>Client Confidential</span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta"><span class="proj-type">Productivity App</span><span class="proj-yr">2023</span>
+            </div>
+            <div class="proj-name">Timesheets Application</div>
+            <p class="proj-desc">Work platform for logging hours, tracking project time, and generating clean weekly
+              reports.</p>
+            <div class="proj-foot">
+              <div class="tags" style="margin:0"><span class="tag">React</span><span class="tag">Next.js</span></div>
+              <span class="conf-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>Confidential</span>
+            </div>
           </div>
         </div>
-
-        <div class="tc reveal">
-          <div class="tc-top"><div class="tc-stars">★★★★★</div><div class="tc-qmark">"</div></div>
-          <p class="tc-text">Our sign-ups went up 3× in the first month. The attention to UX detail was incredible — users absolutely love the experience.</p>
-          <div class="tc-div"></div>
-          <div class="tc-author">
-            <div class="tc-av">PR</div>
-            <div><div class="tc-name">Prasad Reddy</div><div class="tc-role">Lakshya Steel</div></div>
+        <div class="proj-card reveal">
+          <div class="proj-thumb">
+            <div class="proj-thumb-bg"></div>
+            <span class="proj-thumb-emoji">🌐</span>
+            <div class="proj-thumb-lock">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <span>Client Confidential</span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta"><span class="proj-type">Website</span><span class="proj-yr">2024</span></div>
+            <div class="proj-name">Corporate Website</div>
+            <p class="proj-desc">Corporate website showcasing services, team, and driving inbound leads for the
+              business.</p>
+            <div class="proj-foot">
+              <div class="tags" style="margin:0"><span class="tag">React</span><span class="tag">Next.js</span></div>
+              <span class="conf-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>Confidential</span>
+            </div>
           </div>
         </div>
-
-        <div class="tc reveal">
-          <div class="tc-top"><div class="tc-stars">★★★★★</div><div class="tc-qmark">"</div></div>
-          <p class="tc-text">The AI chatbot they built for us handles over 70% of our customer queries automatically. The ROI in the first quarter was beyond expectations.</p>
-          <div class="tc-div"></div>
-          <div class="tc-author">
-            <div class="tc-av">AR</div>
-            <div><div class="tc-name">Arun Reddy</div></div>
+        <div class="proj-card reveal">
+          <div class="proj-thumb">
+            <div class="proj-thumb-bg"></div>
+            <span class="proj-thumb-emoji">🧠</span>
+            <div class="proj-thumb-lock">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <span>Client Confidential</span>
+            </div>
+          </div>
+          <div class="proj-body">
+            <div class="proj-meta"><span class="proj-type">Web App</span><span class="proj-yr">2025</span></div>
+            <div class="proj-name">Quiz Application</div>
+            <p class="proj-desc">Interactive quiz platform with timed rounds, scoring, leaderboards, and multi-category
+              question banks.</p>
+            <div class="proj-foot">
+              <div class="tags" style="margin:0"><span class="tag">React</span><span class="tag">Spring Boot</span><span
+                  class="tag">Java</span></div>
+              <span class="conf-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>Confidential</span>
+            </div>
           </div>
         </div>
-
-        <div class="tc reveal">
-          <div class="tc-top"><div class="tc-stars">★★★★★</div><div class="tc-qmark">"</div></div>
-          <p class="tc-text">Daxora Labs revamped our entire brand identity and website. We saw a 40% increase in inbound leads within two months of the relaunch.</p>
-          <div class="tc-div"></div>
-          <div class="tc-author">
-            <div class="tc-av">NK</div>
-            <div><div class="tc-name">Nandini Kapoor</div></div>
+        <div class="proj-card reveal">
+          <div class="proj-thumb">
+            <div class="proj-thumb-bg"></div>
+            <span class="proj-thumb-emoji">📝</span>
+            <div class="proj-thumb-lock">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg>
+              <span>Client Confidential</span>
+            </div>
           </div>
-        </div>
+          <div class="proj-body">
+            <div class="proj-meta"><span class="proj-type">Web App</span><span class="proj-yr">2026</span></div>
+            <div class="proj-name">Corporate Exam Portal</div>
+            <p class="proj-desc">Enterprise-grade exam platform for employee assessments, certifications, and training
+              evaluations with role-based access and analytics.</p>
+            <div class="proj-foot">
+              <div class="tags" style="margin:0"><span class="tag">React</span><span class="tag">Spring Boot</span><span
+                  class="tag">PostgreSQL</span></div>
+              <span class="conf-badge"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2.5">
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>Confidential</span>
+            </div> <!-- proj-foot -->
+          </div> <!-- proj-body -->
+        </div> <!-- proj-card -->
 
-        <div class="tc reveal">
-          <div class="tc-top"><div class="tc-stars">★★★★★</div><div class="tc-qmark">"</div></div>
-          <p class="tc-text">From discovery to deployment in under 3 weeks. The team was incredibly structured and never once missed a milestone. Truly professional.</p>
-          <div class="tc-div"></div>
-          <div class="tc-author">
-            <div class="tc-av">SM</div>
-            <div><div class="tc-name">Suresh Mehta</div></div>
-          </div>
-        </div>
-
-      </div>
+      </div> <!-- proj-grid -->
 
       <div class="carousel-controls">
-        <button class="cc-btn" onclick="scrollCarousel(-1)" aria-label="Previous">←</button>
-        <button class="cc-btn" onclick="scrollCarousel(1)" aria-label="Next">→</button>
-      </div>
-      <div class="carousel-dots" id="carouselDots"></div>
-    </div>
-  </div>
-</div>
-
-<div class="div"></div>
-
-<!-- WHY CHOOSE US -->
-<div class="wrap-full why-bg" id="why">
-  <div class="inner">
-
-    <div class="why-top-grid">
-      <!-- LEFT: heading + value props -->
-      <div>
-        <div class="sec-head reveal" style="margin-bottom:0">
-          <div class="eyebrow">Why Daxora Labs</div>
-          <h2 class="sh">The team that<br><em>delivers</em></h2>
-          <p class="ss" style="margin-top:.9rem">We're not just another agency. We're a tight-knit team of specialists who've shipped products that actually move the needle — from MVPs to enterprise-grade systems.</p>
-        </div>
-        <div class="why-big-stat">
-          <div class="wbs-item reveal">
-            <div class="wbs-icon">🧠</div>
-            <div class="wbs-text">
-              <div class="wbs-title">Experienced, Specialist Team</div>
-              <div class="wbs-desc">Every project is handled by domain specialists — developers, designers, marketers, and automation engineers — not generalists wearing every hat.</div>
-            </div>
-          </div>
-          <div class="wbs-item reveal">
-            <div class="wbs-icon">⚡</div>
-            <div class="wbs-text">
-              <div class="wbs-title">Speed Without Cutting Corners</div>
-              <div class="wbs-desc">We build fast and build right. Rapid delivery cycles backed by clean architecture, not spaghetti code that breaks at scale.</div>
-            </div>
-          </div>
-          <div class="wbs-item reveal">
-            <div class="wbs-icon">🎯</div>
-            <div class="wbs-text">
-              <div class="wbs-title">Results-First Mindset</div>
-              <div class="wbs-desc">Every decision — design, tech, copy — is made with one question: does this convert, retain, or grow? We optimize for outcomes, not aesthetics alone.</div>
-            </div>
-          </div>
-          <div class="wbs-item reveal">
-            <div class="wbs-icon">🔒</div>
-            <div class="wbs-text">
-              <div class="wbs-title">Full Ownership & Transparency</div>
-              <div class="wbs-desc">You get full code ownership, detailed handover docs, and zero black boxes. We believe clients should always know what they paid for.</div>
-            </div>
-          </div>
-        </div>
+        <button class="cc-btn" onclick="scrollProjects(-1)" aria-label="Previous">←</button>
+        <button class="cc-btn" onclick="scrollProjects(1)" aria-label="Next">→</button>
       </div>
 
-      <!-- RIGHT: stats -->
-      <div class="why-right">
-        <div class="why-numbers-grid">
-          <div class="wn reveal">
-            <div class="wn-num">20+</div>
-            <div class="wn-label">Projects Shipped</div>
-            <div class="wn-sub">Across SaaS, e-commerce, automation & more</div>
+      <div class="carousel-dots" id="projDots"></div>
+
+      <div class="proj-list">
+        <div class="prow reveal">
+          <span class="prow-num">01</span>
+          <div>
+            <div class="prow-name">CRM Dashboard</div>
+            <div class="prow-desc">Sales CRM for managing leads, tracking deals, and monitoring team performance</div>
+            <div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span
+                class="tag">Dashboard</span></div>
           </div>
-          <div class="wn reveal">
-            <div class="wn-num">3×</div>
-            <div class="wn-label">Avg. Growth</div>
-            <div class="wn-sub">Average conversion uplift reported by clients</div>
-          </div>
-          <div class="wn reveal">
-            <div class="wn-num">99%</div>
-            <div class="wn-label">Satisfaction</div>
-            <div class="wn-sub">Clients who would recommend Daxora Labs</div>
-          </div>
-          <div class="wn reveal">
-            <div class="wn-num">24h</div>
-            <div class="wn-label">Response Time</div>
-            <div class="wn-sub">Always reachable, always responsive</div>
+          <div class="prow-right">
+            <div class="prow-lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg></div>
+            <span class="prow-cat">CRM / Web App</span><span class="prow-yr">2026</span>
           </div>
         </div>
-
-        <!-- Compare strip -->
-        <div class="why-compare reveal">
-          <div class="wc-head">
-            <div class="wc-col">What you need</div>
-            <div class="wc-col">Typical Agency</div>
-            <div class="wc-col highlight">Daxora Labs</div>
+        <div class="prow reveal">
+          <span class="prow-num">02</span>
+          <div>
+            <div class="prow-name">Timesheets Application</div>
+            <div class="prow-desc">Work platform for logging employee hours, tracking project time, and generating
+              weekly reports</div>
+            <div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Time
+                Tracking</span></div>
           </div>
-          <div class="wc-row">
-            <div class="wc-cell">Fast turnaround</div>
-            <div class="wc-cell"><span class="maybe">~</span> Weeks of back-and-forth</div>
-            <div class="wc-cell highlight"><span class="yes">✓</span> Sprints from day one</div>
+          <div class="prow-right">
+            <div class="prow-lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg></div>
+            <span class="prow-cat">Productivity App</span><span class="prow-yr">2023</span>
           </div>
-          <div class="wc-row">
-            <div class="wc-cell">Fixed pricing</div>
-            <div class="wc-cell"><span class="no">✗</span> Scope creep surprises</div>
-            <div class="wc-cell highlight"><span class="yes">✓</span> No Hidden Charges, Locked scope & price</div>
+        </div>
+        <div class="prow reveal">
+          <span class="prow-num">03</span>
+          <div>
+            <div class="prow-name">Corporate Website</div>
+            <div class="prow-desc">Corporate website showcasing services, team, and driving inbound lead generation
+            </div>
+            <div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Landing
+                Page</span></div>
           </div>
-          <div class="wc-row">
-            <div class="wc-cell">Full-service team</div>
-            <div class="wc-cell"><span class="maybe">~</span> Multiple vendors</div>
-            <div class="wc-cell highlight"><span class="yes">✓</span> One team, all skills</div>
+          <div class="prow-right">
+            <div class="prow-lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg></div>
+            <span class="prow-cat">Website</span><span class="prow-yr">2024</span>
           </div>
-          <div class="wc-row">
-            <div class="wc-cell">Code ownership</div>
-            <div class="wc-cell"><span class="no">✗</span> Often locked in</div>
-            <div class="wc-cell highlight"><span class="yes">✓</span> 100% yours at handoff</div>
+        </div>
+        <div class="prow reveal">
+          <span class="prow-num">04</span>
+          <div>
+            <div class="prow-name">Quiz Application</div>
+            <div class="prow-desc">Interactive quiz platform with timed rounds, scoring, leaderboards, and
+              multi-category question banks</div>
+            <div class="tags"><span class="tag">React</span><span class="tag">Spring Boot</span><span
+                class="tag">Hibernate</span><span class="tag">Java</span></div>
           </div>
-          <div class="wc-row">
-            <div class="wc-cell">Post-launch support</div>
-            <div class="wc-cell"><span class="no">✗</span> Extra cost</div>
-            <div class="wc-cell highlight"><span class="yes">✓</span> 30 days included</div>
+          <div class="prow-right">
+            <div class="prow-lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg></div>
+            <span class="prow-cat">Web App</span><span class="prow-yr">2025</span>
+          </div>
+        </div>
+        <div class="prow reveal">
+          <span class="prow-num">05</span>
+          <div>
+            <div class="prow-name">Corporate Exam Portal</div>
+            <div class="prow-desc">Enterprise exam platform for employee assessments, certifications, and training
+              evaluations with analytics dashboard</div>
+            <div class="tags"><span class="tag">React</span><span class="tag">Spring Boot</span><span
+                class="tag">PostgreSQL</span><span class="tag">Java</span></div>
+          </div>
+          <div class="prow-right">
+            <div class="prow-lock"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" />
+                <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+              </svg></div>
+            <span class="prow-cat">Web App</span><span class="prow-yr">2026</span>
           </div>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Bottom 4 feature cards -->
-    <div class="why-feats reveal">
-      <div class="wf">
-        <div class="wf-icon">🏗️</div>
-        <div class="wf-accent-line"></div>
-        <div class="wf-title">Built to Scale</div>
-        <div class="wf-desc">Every system we build is architected to grow with your business — no painful rewrites six months later.</div>
-      </div>
-      <div class="wf">
-        <div class="wf-icon">🤝</div>
-        <div class="wf-accent-line"></div>
-        <div class="wf-title">True Partnership</div>
-        <div class="wf-desc">We embed into your vision. You'll feel like we're part of your team, not a vendor you chase for updates.</div>
-      </div>
-      <div class="wf">
-        <div class="wf-icon">🌍</div>
-        <div class="wf-accent-line"></div>
-        <div class="wf-title">Global Standards</div>
-        <div class="wf-desc">Hyderabad-based, globally minded. We build to international quality standards with local pricing advantages.</div>
-      </div>
-      <div class="wf">
-        <div class="wf-icon">♾️</div>
-        <div class="wf-accent-line"></div>
-        <div class="wf-title">End-to-End Delivery</div>
-        <div class="wf-desc">Design to deployment in one place. No coordination tax between different agencies or freelancers.</div>
-      </div>
+
+  <div class="div"></div>
+  <section class="patents">
+    <div class="sec-head">
+      <div class="eyebrow">Innovation</div>
+
+      <h2 class="sh">
+        Patents <em>Applied</em>
+      </h2>
+
+      <p class="ss">
+        Innovative and research-driven technology systems currently under patent application and development.
+      </p>
     </div>
 
-  </div>
-</div>
+    <div class="patent-grid">
 
+      <!-- CARD 1 -->
+      <div class="patent-card">
 
-<div class="div"></div>
+        <span class="patent-status">
+          Patent Applied
+        </span>
 
-<!-- CONTACT -->
-<div class="wrap-full" id="contact">
-  <div class="inner">
-    <div class="contact-grid">
-      <div class="reveal">
-        <div class="eyebrow">Let's Work Together</div>
-        <h2 class="sh">Have a project<br><em>in mind?</em></h2>
-        <p class="ss">Currently open to new projects. Let's build something exceptional together.</p>
-        <div class="contact-info">
-          <div class="ci"><span class="ci-l">Email</span><a href="mailto:daxoralabs@outlook.com" class="ci-v">daxoralabs@outlook.com</a></div>
-          <div class="ci"><span class="ci-l">Response Time</span><span class="ci-v">Within 24 hours</span></div>
-          <div class="ci"><span class="ci-l">Availability</span><span class="ci-v green">● Open to new projects</span></div>
-          <div class="ci"><span class="ci-l">Location</span><span class="ci-v">Hyderabad, India · Remote OK</span></div>
+        <h3>Patent Pending Technologies</h3>
+
+        <p>
+          Advanced digital systems and intelligent solutions designed for scalable real-world applications and
+          innovation-focused development.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Innovation</span>
+          <span class="tag">AI Systems</span>
+          <span class="tag">Research</span>
+        </div>
+
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="patent-card">
+
+        <span class="patent-status">
+          Patent Applied
+        </span>
+
+        <h3>Confidential Technology Research</h3>
+
+        <p>
+          Research-oriented system architectures and emerging technology concepts currently progressing through patent
+          application stages.
+        </p>
+
+        <div class="tags">
+          <span class="tag">Technology</span>
+          <span class="tag">Systems</span>
+          <span class="tag">Development</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+  <!-- PROCESS -->
+  <div class="wrap-full proc-bg" id="process">
+    <div class="inner">
+      <div class="sec-head reveal">
+        <div class="eyebrow">How We Work</div>
+        <h2 class="sh">Transparent process,<br><em>zero surprises</em></h2>
+        <p class="ss">Clear milestones and direct communication at every step of the journey.</p>
+      </div>
+      <div class="proc-grid">
+        <div class="proc-step reveal">
+          <div class="proc-top">
+            <span class="proc-n">01</span>
+            <div class="proc-icon-wrap">🎯</div>
+          </div>
+          <div class="proc-title">Discovery Call</div>
+          <p class="proc-desc">We talk through your goals, timeline, and budget. We ask the right questions before
+            writing a single line of code.</p>
+        </div>
+        <div class="proc-step reveal">
+          <div class="proc-top">
+            <span class="proc-n">02</span>
+            <div class="proc-icon-wrap">📋</div>
+          </div>
+          <div class="proc-title">Proposal & Scope</div>
+          <p class="proc-desc">A clear proposal with deliverables, milestones, and fixed pricing. You know exactly what
+            you're getting.</p>
+        </div>
+        <div class="proc-step reveal">
+          <div class="proc-top">
+            <span class="proc-n">03</span>
+            <div class="proc-icon-wrap">⚙️</div>
+          </div>
+          <div class="proc-title">Build & Review</div>
+          <p class="proc-desc">Iterative build cycles with regular updates. Feedback goes straight into the next sprint
+            — no surprises.</p>
+        </div>
+        <div class="proc-step reveal">
+          <div class="proc-top">
+            <span class="proc-n">04</span>
+            <div class="proc-icon-wrap">🚀</div>
+          </div>
+          <div class="proc-title">Launch & Support</div>
+          <p class="proc-desc">Smooth deployment, handover docs, and 30 days of post-launch support included as
+            standard.</p>
         </div>
       </div>
-      <form class="contact-form reveal" onsubmit="handleSend(event)">
-        <div class="form-row">
-          <div class="fg"><label for="fn">Your Name</label><input type="text" id="fn" placeholder="Priya Sharma" required></div>
-          <div class="fg"><label for="em">Email</label><input type="email" id="em" placeholder="priya@company.com" required></div>
-        </div>
-        <div class="fg">
-          <label for="bud">Budget Range</label>
-          <select id="bud">
-            <option value="" disabled selected>Select a budget range</option>
-            <option>Under ₹25,000</option>
-            <option>₹25,000 – ₹75,000</option>
-            <option>₹75,000 – ₹2,00,000</option>
-            <option>₹2,00,000+</option>
-            <option>Let's discuss</option>
-          </select>
-        </div>
-        <div class="fg"><label for="msg">Project Details</label><textarea id="msg" placeholder="What do you need built? Share context, links, or timelines..." required></textarea></div>
-        <button type="submit" class="btn-send" id="sendBtn">Send Message →</button>
-      </form>
     </div>
   </div>
-</div>
 
-<footer>
-  <span class="foot-copy">© 2026 <strong>Daxora Labs</strong> — All Rights Reserved</span>
-  <div class="foot-links">
-    <a href="index.html#services">Services</a>
-    <a href="index.html#work">Work</a>
-    <a href="index.html#process">Process</a>
-    <a href="index.html#why">Why Us</a>
-    <a href="index.html#contact">Contact</a>
+  <div class="div"></div>
+
+  <!-- TESTIMONIALS -->
+  <div class="wrap-full">
+    <div class="inner">
+      <div class="sec-head reveal">
+        <div class="eyebrow">Client Stories</div>
+        <h2 class="sh">What our <em>clients</em> say</h2>
+        <p class="ss">Real feedback from clients who trusted us to build their digital products.</p>
+      </div>
+
+      <div class="test-carousel-wrap">
+        <div class="test-scroll" id="testScroll">
+
+          <div class="tc reveal">
+            <div class="tc-top">
+              <div class="tc-stars">★★★★★</div>
+              <div class="tc-qmark">"</div>
+            </div>
+            <p class="tc-text">Delivered the project two days early and the code quality was exceptional. Our load time
+              dropped by 60%. I wouldn't hesitate to hire again.</p>
+            <div class="tc-div"></div>
+            <div class="tc-author">
+              <div class="tc-av">CS</div>
+              <div>
+                <div class="tc-name">Chandra Sekhar</div>
+                <div class="tc-role">CSR Associates</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc reveal">
+            <div class="tc-top">
+              <div class="tc-stars">★★★★★</div>
+              <div class="tc-qmark">"</div>
+            </div>
+            <p class="tc-text">What stood out was the communication — always responsive, always clear. The dashboard
+              looked exactly like our Figma, but better executed.</p>
+            <div class="tc-div"></div>
+            <div class="tc-author">
+              <div class="tc-av">PS</div>
+              <div>
+                <div class="tc-name">Pushpa</div>
+                <div class="tc-role">Apex Pipes, MD</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc reveal">
+            <div class="tc-top">
+              <div class="tc-stars">★★★★★</div>
+              <div class="tc-qmark">"</div>
+            </div>
+            <p class="tc-text">Our sign-ups went up 3× in the first month. The attention to UX detail was incredible —
+              users absolutely love the experience.</p>
+            <div class="tc-div"></div>
+            <div class="tc-author">
+              <div class="tc-av">PR</div>
+              <div>
+                <div class="tc-name">Prasad Reddy</div>
+                <div class="tc-role">Lakshya Steel</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc reveal">
+            <div class="tc-top">
+              <div class="tc-stars">★★★★★</div>
+              <div class="tc-qmark">"</div>
+            </div>
+            <p class="tc-text">The AI chatbot they built for us handles over 70% of our customer queries automatically.
+              The ROI in the first quarter was beyond expectations.</p>
+            <div class="tc-div"></div>
+            <div class="tc-author">
+              <div class="tc-av">AR</div>
+              <div>
+                <div class="tc-name">Arun Reddy</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc reveal">
+            <div class="tc-top">
+              <div class="tc-stars">★★★★★</div>
+              <div class="tc-qmark">"</div>
+            </div>
+            <p class="tc-text">Daxora Labs revamped our entire brand identity and website. We saw a 40% increase in
+              inbound leads within two months of the relaunch.</p>
+            <div class="tc-div"></div>
+            <div class="tc-author">
+              <div class="tc-av">NK</div>
+              <div>
+                <div class="tc-name">Nandini Kapoor</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tc reveal">
+            <div class="tc-top">
+              <div class="tc-stars">★★★★★</div>
+              <div class="tc-qmark">"</div>
+            </div>
+            <p class="tc-text">From discovery to deployment in under 3 weeks. The team was incredibly structured and
+              never once missed a milestone. Truly professional.</p>
+            <div class="tc-div"></div>
+            <div class="tc-author">
+              <div class="tc-av">SM</div>
+              <div>
+                <div class="tc-name">Suresh Mehta</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="carousel-controls">
+          <button class="cc-btn" onclick="scrollCarousel(-1)" aria-label="Previous">←</button>
+          <button class="cc-btn" onclick="scrollCarousel(1)" aria-label="Next">→</button>
+        </div>
+        <div class="carousel-dots" id="carouselDots"></div>
+      </div>
+    </div>
   </div>
-</footer>
 
-<script>
-const API_BASE="https://free-backend-axzr.onrender.com/api/v1";
+  <div class="div"></div>
 
-/* cursor */
-if(window.matchMedia('(pointer:fine)').matches){
-  const c=document.getElementById('cur'),r=document.getElementById('ring');
-  document.addEventListener('mousemove',e=>{
-    c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';
-    setTimeout(()=>{r.style.left=e.clientX+'px';r.style.top=e.clientY+'px'},85);
-  });
-  document.querySelectorAll('a,button,.svc-card,.proj-card,.tc,.proc-step').forEach(el=>{
-    el.addEventListener('mouseenter',()=>{r.style.width='44px';r.style.height='44px';r.style.borderColor='rgba(249,115,22,.7)'});
-    el.addEventListener('mouseleave',()=>{r.style.width='28px';r.style.height='28px';r.style.borderColor='rgba(249,115,22,.45)'});
-  });
-}
-/* Projects carousel */
-(function(){
-  const grid = document.querySelector('.proj-grid');
-  const dotsWrap = document.getElementById('projDots');
-  if (!grid || !dotsWrap) return;
-  const cards = grid.querySelectorAll('.proj-card');
-  const cardW = () => cards[0].offsetWidth + 22;
+  <!-- WHY CHOOSE US -->
+  <div class="wrap-full why-bg" id="why">
+    <div class="inner">
 
-  cards.forEach((_,i) => {
-    const d = document.createElement('button');
-    d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    d.setAttribute('aria-label', 'Go to project ' + (i+1));
-    d.onclick = () => grid.scrollTo({ left: i * cardW(), behavior: 'smooth' });
-    dotsWrap.appendChild(d);
-  });
+      <div class="why-top-grid">
+        <!-- LEFT: heading + value props -->
+        <div>
+          <div class="sec-head reveal" style="margin-bottom:0">
+            <div class="eyebrow">Why Daxora Labs</div>
+            <h2 class="sh">The team that<br><em>delivers</em></h2>
+            <p class="ss" style="margin-top:.9rem">We're not just another agency. We're a tight-knit team of specialists
+              who've shipped products that actually move the needle — from MVPs to enterprise-grade systems.</p>
+          </div>
+          <div class="why-big-stat">
+            <div class="wbs-item reveal">
+              <div class="wbs-icon">🧠</div>
+              <div class="wbs-text">
+                <div class="wbs-title">Experienced, Specialist Team</div>
+                <div class="wbs-desc">Every project is handled by domain specialists — developers, designers, marketers,
+                  and automation engineers — not generalists wearing every hat.</div>
+              </div>
+            </div>
+            <div class="wbs-item reveal">
+              <div class="wbs-icon">⚡</div>
+              <div class="wbs-text">
+                <div class="wbs-title">Speed Without Cutting Corners</div>
+                <div class="wbs-desc">We build fast and build right. Rapid delivery cycles backed by clean architecture,
+                  not spaghetti code that breaks at scale.</div>
+              </div>
+            </div>
+            <div class="wbs-item reveal">
+              <div class="wbs-icon">🎯</div>
+              <div class="wbs-text">
+                <div class="wbs-title">Results-First Mindset</div>
+                <div class="wbs-desc">Every decision — design, tech, copy — is made with one question: does this
+                  convert, retain, or grow? We optimize for outcomes, not aesthetics alone.</div>
+              </div>
+            </div>
+            <div class="wbs-item reveal">
+              <div class="wbs-icon">🔒</div>
+              <div class="wbs-text">
+                <div class="wbs-title">Full Ownership & Transparency</div>
+                <div class="wbs-desc">You get full code ownership, detailed handover docs, and zero black boxes. We
+                  believe clients should always know what they paid for.</div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-  window.scrollProjects = function(dir) {
-    grid.scrollBy({ left: dir * cardW(), behavior: 'smooth' });
-  };
+        <!-- RIGHT: stats -->
+        <div class="why-right">
+          <div class="why-numbers-grid">
+            <div class="wn reveal">
+              <div class="wn-num">20+</div>
+              <div class="wn-label">Projects Shipped</div>
+              <div class="wn-sub">Across SaaS, e-commerce, automation & more</div>
+            </div>
+            <div class="wn reveal">
+              <div class="wn-num">3×</div>
+              <div class="wn-label">Avg. Growth</div>
+              <div class="wn-sub">Average conversion uplift reported by clients</div>
+            </div>
+            <div class="wn reveal">
+              <div class="wn-num">99%</div>
+              <div class="wn-label">Satisfaction</div>
+              <div class="wn-sub">Clients who would recommend Daxora Labs</div>
+            </div>
+            <div class="wn reveal">
+              <div class="wn-num">24h</div>
+              <div class="wn-label">Response Time</div>
+              <div class="wn-sub">Always reachable, always responsive</div>
+            </div>
+          </div>
 
-  grid.addEventListener('scroll', () => {
-    const idx = Math.round(grid.scrollLeft / cardW());
-    dotsWrap.querySelectorAll('.carousel-dot').forEach((d,i) =>
-      d.classList.toggle('active', i === idx));
-  });
-})();
+          <!-- Compare strip -->
+          <div class="why-compare reveal">
+            <div class="wc-head">
+              <div class="wc-col">What you need</div>
+              <div class="wc-col">Typical Agency</div>
+              <div class="wc-col highlight">Daxora Labs</div>
+            </div>
+            <div class="wc-row">
+              <div class="wc-cell">Fast turnaround</div>
+              <div class="wc-cell"><span class="maybe">~</span> Weeks of back-and-forth</div>
+              <div class="wc-cell highlight"><span class="yes">✓</span> Sprints from day one</div>
+            </div>
+            <div class="wc-row">
+              <div class="wc-cell">Fixed pricing</div>
+              <div class="wc-cell"><span class="no">✗</span> Scope creep surprises</div>
+              <div class="wc-cell highlight"><span class="yes">✓</span> No Hidden Charges, Locked scope & price</div>
+            </div>
+            <div class="wc-row">
+              <div class="wc-cell">Full-service team</div>
+              <div class="wc-cell"><span class="maybe">~</span> Multiple vendors</div>
+              <div class="wc-cell highlight"><span class="yes">✓</span> One team, all skills</div>
+            </div>
+            <div class="wc-row">
+              <div class="wc-cell">Code ownership</div>
+              <div class="wc-cell"><span class="no">✗</span> Often locked in</div>
+              <div class="wc-cell highlight"><span class="yes">✓</span> 100% yours at handoff</div>
+            </div>
+            <div class="wc-row">
+              <div class="wc-cell">Post-launch support</div>
+              <div class="wc-cell"><span class="no">✗</span> Extra cost</div>
+              <div class="wc-cell highlight"><span class="yes">✓</span> 30 days included</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-/* hamburger */
-const ham=document.getElementById('ham'),mob=document.getElementById('mobnav');
-ham.addEventListener('click',()=>{ham.classList.toggle('open');mob.classList.toggle('open')});
-mob.querySelectorAll('a').forEach(l=>l.addEventListener('click',()=>{ham.classList.remove('open');mob.classList.remove('open')}));
+      <!-- Bottom 4 feature cards -->
+      <div class="why-feats reveal">
+        <div class="wf">
+          <div class="wf-icon">🏗️</div>
+          <div class="wf-accent-line"></div>
+          <div class="wf-title">Built to Scale</div>
+          <div class="wf-desc">Every system we build is architected to grow with your business — no painful rewrites six
+            months later.</div>
+        </div>
+        <div class="wf">
+          <div class="wf-icon">🤝</div>
+          <div class="wf-accent-line"></div>
+          <div class="wf-title">True Partnership</div>
+          <div class="wf-desc">We embed into your vision. You'll feel like we're part of your team, not a vendor you
+            chase for updates.</div>
+        </div>
+        <div class="wf">
+          <div class="wf-icon">🌍</div>
+          <div class="wf-accent-line"></div>
+          <div class="wf-title">Global Standards</div>
+          <div class="wf-desc">Hyderabad-based, globally minded. We build to international quality standards with local
+            pricing advantages.</div>
+        </div>
+        <div class="wf">
+          <div class="wf-icon">♾️</div>
+          <div class="wf-accent-line"></div>
+          <div class="wf-title">End-to-End Delivery</div>
+          <div class="wf-desc">Design to deployment in one place. No coordination tax between different agencies or
+            freelancers.</div>
+        </div>
+      </div>
 
-/* scroll reveal */
-const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:0.1});
-document.querySelectorAll('.reveal').forEach((el,i)=>{el.style.transitionDelay=(i%4)*.09+'s';obs.observe(el)});
+    </div>
+  </div>
 
-/* nav opacity */
-window.addEventListener('scroll',()=>{
-  document.getElementById('nav').style.background=window.scrollY>50?'rgba(6,6,10,.97)':'rgba(6,6,10,.8)';
-});
-/* Testimonial carousel */
-(function(){
-  const scroll = document.getElementById('testScroll');
-  const dotsWrap = document.getElementById('carouselDots');
-  if (!scroll || !dotsWrap) return;
-  const cards = scroll.querySelectorAll('.tc');
-  const cardW = () => cards[0].offsetWidth + 22; // card + gap
 
-  cards.forEach((_,i) => {
-    const d = document.createElement('button');
-    d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
-    d.setAttribute('aria-label', 'Go to testimonial ' + (i+1));
-    d.onclick = () => scroll.scrollTo({ left: i * cardW(), behavior: 'smooth' });
-    dotsWrap.appendChild(d);
-  });
+  <div class="div"></div>
 
-  window.scrollCarousel = function(dir) {
-    scroll.scrollBy({ left: dir * cardW(), behavior: 'smooth' });
-  };
+  <!-- CONTACT -->
+  <div class="wrap-full" id="contact">
+    <div class="inner">
+      <div class="contact-grid">
+        <div class="reveal">
+          <div class="eyebrow">Let's Work Together</div>
+          <h2 class="sh">Have a project<br><em>in mind?</em></h2>
+          <p class="ss">Currently open to new projects. Let's build something exceptional together.</p>
+          <div class="contact-info">
+            <div class="ci"><span class="ci-l">Email</span><a href="mailto:daxoralabs@outlook.com"
+                class="ci-v">daxoralabs@outlook.com</a></div>
+            <div class="ci"><span class="ci-l">Response Time</span><span class="ci-v">Within 24 hours</span></div>
+            <div class="ci"><span class="ci-l">Availability</span><span class="ci-v green">● Open to new projects</span>
+            </div>
+            <div class="ci"><span class="ci-l">Location</span><span class="ci-v">Hyderabad, India · Remote OK</span>
+            </div>
+          </div>
+        </div>
+        <form class="contact-form reveal" onsubmit="handleSend(event)">
+          <div class="form-row">
+            <div class="fg"><label for="fn">Your Name</label><input type="text" id="fn" placeholder="Priya Sharma"
+                required></div>
+            <div class="fg"><label for="em">Email</label><input type="email" id="em" placeholder="priya@company.com"
+                required></div>
+          </div>
+          <div class="fg">
+            <label for="bud">Budget Range</label>
+            <select id="bud">
+              <option value="" disabled selected>Select a budget range</option>
+              <option>Under ₹25,000</option>
+              <option>₹25,000 – ₹75,000</option>
+              <option>₹75,000 – ₹2,00,000</option>
+              <option>₹2,00,000+</option>
+              <option>Let's discuss</option>
+            </select>
+          </div>
+          <div class="fg"><label for="msg">Project Details</label><textarea id="msg"
+              placeholder="What do you need built? Share context, links, or timelines..." required></textarea></div>
+          <button type="submit" class="btn-send" id="sendBtn">Send Message →</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
-  scroll.addEventListener('scroll', () => {
-    const idx = Math.round(scroll.scrollLeft / cardW());
-    dotsWrap.querySelectorAll('.carousel-dot').forEach((d,i) =>
-      d.classList.toggle('active', i === idx));
-  });
-})();
+  <footer>
+    <span class="foot-copy">© 2026 <strong>Daxora Labs</strong> — All Rights Reserved</span>
+    <div class="foot-links">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#work">Work</a>
+      <a href="index.html#process">Process</a>
+      <a href="index.html#why">Why Us</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </footer>
 
-/* toast */
-function showToast(html,type='success'){
-  document.getElementById('toast')?.remove();
-  const t=document.createElement('div');t.id='toast';
-  t.style.cssText=`position:fixed;bottom:2rem;right:2rem;z-index:9999;
-    background:${type==='success'?'#0c0c12':'#140808'};
-    border:1px solid ${type==='success'?'rgba(249,115,22,.3)':'rgba(239,68,68,.3)'};
+  <script>
+    const API_BASE = "https://free-backend-axzr.onrender.com/api/v1";
+
+    /* cursor */
+    if (window.matchMedia('(pointer:fine)').matches) {
+      const c = document.getElementById('cur'), r = document.getElementById('ring');
+      document.addEventListener('mousemove', e => {
+        c.style.left = e.clientX + 'px'; c.style.top = e.clientY + 'px';
+        setTimeout(() => { r.style.left = e.clientX + 'px'; r.style.top = e.clientY + 'px' }, 85);
+      });
+      document.querySelectorAll('a,button,.svc-card,.proj-card,.tc,.proc-step').forEach(el => {
+        el.addEventListener('mouseenter', () => { r.style.width = '44px'; r.style.height = '44px'; r.style.borderColor = 'rgba(249,115,22,.7)' });
+        el.addEventListener('mouseleave', () => { r.style.width = '28px'; r.style.height = '28px'; r.style.borderColor = 'rgba(249,115,22,.45)' });
+      });
+    }
+    /* Projects carousel */
+    (function () {
+      const grid = document.querySelector('.proj-grid');
+      const dotsWrap = document.getElementById('projDots');
+      if (!grid || !dotsWrap) return;
+      const cards = grid.querySelectorAll('.proj-card');
+      const cardW = () => cards[0].offsetWidth + 22;
+
+      cards.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Go to project ' + (i + 1));
+        d.onclick = () => grid.scrollTo({ left: i * cardW(), behavior: 'smooth' });
+        dotsWrap.appendChild(d);
+      });
+
+      window.scrollProjects = function (dir) {
+        grid.scrollBy({ left: dir * cardW(), behavior: 'smooth' });
+      };
+
+      grid.addEventListener('scroll', () => {
+        const idx = Math.round(grid.scrollLeft / cardW());
+        dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) =>
+          d.classList.toggle('active', i === idx));
+      });
+    })();
+
+    /* hamburger */
+    const ham = document.getElementById('ham'), mob = document.getElementById('mobnav');
+    ham.addEventListener('click', () => { ham.classList.toggle('open'); mob.classList.toggle('open') });
+    mob.querySelectorAll('a').forEach(l => l.addEventListener('click', () => { ham.classList.remove('open'); mob.classList.remove('open') }));
+
+    /* scroll reveal */
+    const obs = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in') }), { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * .09 + 's'; obs.observe(el) });
+
+    /* nav opacity */
+    window.addEventListener('scroll', () => {
+      document.getElementById('nav').style.background = window.scrollY > 50 ? 'rgba(6,6,10,.97)' : 'rgba(6,6,10,.8)';
+    });
+    /* Testimonial carousel */
+    (function () {
+      const scroll = document.getElementById('testScroll');
+      const dotsWrap = document.getElementById('carouselDots');
+      if (!scroll || !dotsWrap) return;
+      const cards = scroll.querySelectorAll('.tc');
+      const cardW = () => cards[0].offsetWidth + 22; // card + gap
+
+      cards.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+        d.onclick = () => scroll.scrollTo({ left: i * cardW(), behavior: 'smooth' });
+        dotsWrap.appendChild(d);
+      });
+
+      window.scrollCarousel = function (dir) {
+        scroll.scrollBy({ left: dir * cardW(), behavior: 'smooth' });
+      };
+
+      scroll.addEventListener('scroll', () => {
+        const idx = Math.round(scroll.scrollLeft / cardW());
+        dotsWrap.querySelectorAll('.carousel-dot').forEach((d, i) =>
+          d.classList.toggle('active', i === idx));
+      });
+    })();
+
+    /* toast */
+    function showToast(html, type = 'success') {
+      document.getElementById('toast')?.remove();
+      const t = document.createElement('div'); t.id = 'toast';
+      t.style.cssText = `position:fixed;bottom:2rem;right:2rem;z-index:9999;
+    background:${type === 'success' ? '#0c0c12' : '#140808'};
+    border:1px solid ${type === 'success' ? 'rgba(249,115,22,.3)' : 'rgba(239,68,68,.3)'};
     border-radius:14px;padding:1.1rem 1.5rem;max-width:340px;
     font-family:'Outfit',sans-serif;font-size:.84rem;color:#f5f4f2;
     box-shadow:0 10px 36px rgba(0,0,0,.55);animation:slideUp .3s ease;`;
-  t.innerHTML=html;document.body.appendChild(t);
-  setTimeout(()=>t.style.cssText+=';opacity:0;transition:opacity .4s',5000);
-  setTimeout(()=>t.remove(),5400);
-}
-const sty=document.createElement('style');
-sty.textContent=`@keyframes slideUp{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}`;
-document.head.appendChild(sty);
-
-/* send */
-async function handleSend(e){
-  e.preventDefault();
-  const btn=document.getElementById('sendBtn');
-  const name=document.getElementById('fn').value.trim();
-  const email=document.getElementById('em').value.trim();
-  const budget=document.getElementById('bud').value||null;
-  const message=document.getElementById('msg').value.trim();
-  btn.textContent='Sending…';btn.disabled=true;btn.style.opacity='.7';
-  try{
-    const res=await fetch(`${API_BASE}/contact`,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,email,budget,message})});
-    const data=await res.json();
-    if(res.ok&&data.success){
-      btn.textContent='✓ Sent!';btn.style.background='#22c55e';btn.style.boxShadow='0 4px 20px rgba(34,197,94,.3)';btn.style.opacity='1';
-      e.target.reset();
-      showToast(`<div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><span style="color:#22c55e;font-size:1.1rem;">✓</span><strong>Message sent!</strong></div><div style="color:#9d9b96;font-size:.78rem;margin-bottom:.7rem;">Your reference ID:</div><div style="font-family:'JetBrains Mono',monospace;font-size:.98rem;color:#f97316;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);border-radius:8px;padding:.45rem .85rem;letter-spacing:.06em;">${data.reference_id}</div>`);
-      setTimeout(()=>{btn.textContent='Send Message →';btn.style.background='';btn.style.boxShadow='';btn.disabled=false;btn.style.opacity=''},3200);
-    }else if(res.status===429){
-      showError(btn,'Too many requests — wait a minute.');
-    }else{
-      showError(btn,data.detail?.[0]?.msg||data.detail||'Something went wrong.');
+      t.innerHTML = html; document.body.appendChild(t);
+      setTimeout(() => t.style.cssText += ';opacity:0;transition:opacity .4s', 5000);
+      setTimeout(() => t.remove(), 5400);
     }
-  }catch{showError(btn,'Network error — check your connection.')}
-}
-function showError(btn,msg){
-  btn.textContent='✗ '+msg;btn.style.background='#ef4444';btn.style.boxShadow='0 4px 20px rgba(239,68,68,.3)';btn.style.opacity='1';
-  setTimeout(()=>{btn.textContent='Send Message →';btn.style.background='';btn.style.boxShadow='';btn.disabled=false;btn.style.opacity=''},3500);
-}
+    const sty = document.createElement('style');
+    sty.textContent = `@keyframes slideUp{from{transform:translateY(16px);opacity:0}to{transform:translateY(0);opacity:1}}`;
+    document.head.appendChild(sty);
+
+    /* send */
+    async function handleSend(e) {
+      e.preventDefault();
+      const btn = document.getElementById('sendBtn');
+      const name = document.getElementById('fn').value.trim();
+      const email = document.getElementById('em').value.trim();
+      const budget = document.getElementById('bud').value || null;
+      const message = document.getElementById('msg').value.trim();
+      btn.textContent = 'Sending…'; btn.disabled = true; btn.style.opacity = '.7';
+      try {
+        const res = await fetch(`${API_BASE}/contact`, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name, email, budget, message }) });
+        const data = await res.json();
+        if (res.ok && data.success) {
+          btn.textContent = '✓ Sent!'; btn.style.background = '#22c55e'; btn.style.boxShadow = '0 4px 20px rgba(34,197,94,.3)'; btn.style.opacity = '1';
+          e.target.reset();
+          showToast(`<div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.5rem;"><span style="color:#22c55e;font-size:1.1rem;">✓</span><strong>Message sent!</strong></div><div style="color:#9d9b96;font-size:.78rem;margin-bottom:.7rem;">Your reference ID:</div><div style="font-family:'JetBrains Mono',monospace;font-size:.98rem;color:#f97316;background:rgba(249,115,22,.08);border:1px solid rgba(249,115,22,.2);border-radius:8px;padding:.45rem .85rem;letter-spacing:.06em;">${data.reference_id}</div>`);
+          setTimeout(() => { btn.textContent = 'Send Message →'; btn.style.background = ''; btn.style.boxShadow = ''; btn.disabled = false; btn.style.opacity = '' }, 3200);
+        } else if (res.status === 429) {
+          showError(btn, 'Too many requests — wait a minute.');
+        } else {
+          showError(btn, data.detail?.[0]?.msg || data.detail || 'Something went wrong.');
+        }
+      } catch { showError(btn, 'Network error — check your connection.') }
+    }
+
+    function showError(btn, msg) {
+
+      btn.textContent = '✗ ' + msg;
+      btn.style.background = '#ef4444';
+      btn.style.boxShadow = '0 4px 20px rgba(239,68,68,.3)';
+      btn.style.opacity = '1';
+
+      setTimeout(() => {
+
+        btn.textContent = 'Send Message →';
+        btn.style.background = '';
+        btn.style.boxShadow = '';
+        btn.disabled = false;
+        btn.style.opacity = '';
+
+      }, 3500);
+
+    }
+/* ============================================================
+   DAXORA CORE PILLARS — JS
+   Paste this block INSIDE your existing <script> tag
+   JUST BEFORE 
+  ============================================================ */
+
+  (function () {
+
+  const letters = document.querySelectorAll('.pw-letter');
+  const cards = document.querySelectorAll('.pillar-card');
+
+  /* Activate matching letter */
+  function activateLetter(idx) {
+  letters.forEach(letter => {
+  letter.classList.remove('active');
+  });
+
+  if (letters[idx]) {
+  letters[idx].classList.add('active');
+  }
+  }
+
+  /* Card hover effects */
+  cards.forEach((card, index) => {
+
+  card.addEventListener('mouseenter', () => {
+  activateLetter(index);
+  });
+
+  card.addEventListener('mouseleave', () => {
+  letters.forEach(letter => {
+  letter.classList.remove('active');
+  });
+  });
+
+  });
+
+  /* Letter interactions */
+  letters.forEach((letter, index) => {
+
+  letter.style.cursor = 'pointer';
+
+  /* Hover effect */
+  letter.addEventListener('mouseenter', () => {
+  activateLetter(index);
+  });
+
+  letter.addEventListener('mouseleave', () => {
+  letters.forEach(letter => {
+  letter.classList.remove('active');
+  });
+  });
+
+  /* Scroll to matching card */
+  letter.addEventListener('click', () => {
+
+  if (cards[index]) {
+
+  cards[index].scrollIntoView({
+  behavior: 'smooth',
+  block: 'center'
+  });
+
+  cards[index].classList.add('pc-flash');
+
+  setTimeout(() => {
+  cards[index].classList.remove('pc-flash');
+  }, 700);
+
+  }
+
+  });
+
+  });
+
+  })();
 </script>
 </body>
+
 </html>
